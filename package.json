@@ -1,0 +1,22 @@
+{
+    "name": "linondjouliana_5_31012021",
+    "version": "1.0.0",
+    "description": "ORINOCO site de commerce en ligne",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass": "sass --watch /Users/linonliyana/Documents/GitHub/LINONDjouliana_5_31012021/sass/main.scss /Users/linonliyana/Documents/GitHub/LINONDjouliana_5_31012021/css/style.css --compressed",
+        "build": "webpack",
+        "start": "webpack-dev-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LiyanaSC/LINONDjouliana_5_31012021.git"
+    },
+    "author": "DL",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LiyanaSC/LINONDjouliana_5_31012021/issues"
+    },
+    "homepage": "https://github.com/LiyanaSC/LINONDjouliana_5_31012021#readme"
+}

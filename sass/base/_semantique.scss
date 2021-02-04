@@ -5,39 +5,3 @@
 body {
     background-color: map-get($colors, background_color1);
 }
-
-.header {
-    @include no_margin;
-    @include no_padding;
-    @include width_100;
-    @include direction_column;
-    //partie supérieur
-    &_upper_part {
-        @include direction_row;
-        @include width_100;
-        //logo
-        &_logo_box {
-            display: flex;
-            width: 50%;
-        }
-        //navigation
-        &_nav {
-            display: flex;
-            width: 50%;
-        }
-    }
-    &_title {
-        @include width_100;
-        @include direction_column;
-        @include no_margin;
-        padding: nth($pixel_size, 3);
-        justify-content: center;
-        align-items: center;
-        font-family: $font_family_title;
-        font-size: nth($font_size, 4);
-        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/teddy_5.jpg");
-        background-position: bottom;
-        background-attachment: fixed;
-        text-shadow: $shadow;
-    }
-}

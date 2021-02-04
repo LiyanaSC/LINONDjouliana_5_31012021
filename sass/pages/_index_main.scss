@@ -1,0 +1,13 @@
+.main {
+    @include no_margin;
+    @include no_margin;
+    @include width_100;
+    &_products {
+        @include width_100;
+        &_title {
+            font-family: $font_family_texte;
+            color: black;
+            font-weight: bold;
+        }
+    }
+}

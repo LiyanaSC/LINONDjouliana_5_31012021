@@ -1,0 +1,24 @@
+li {
+    list-style-type: none;
+    @include direction_row;
+    @include width_100;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul {
+    display: block;
+    padding: nth($pixel_size, 1);
+}
+
+a {
+    text-decoration: none;
+    font-family: $font_family_texte;
+    color: map-get($colors, normal_color);
+    font-weight: nth($font_size, 2);
+}
+
+p {
+    @include no_padding;
+    @include no_margin;
+}

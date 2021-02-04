@@ -1,4 +1,5 @@
 .site_description {
-    font-size: nth($font_size, 1);
+    font-size: nth($font_size, 2);
     text-align: center;
+    font-family: $font_family_texte;
 }

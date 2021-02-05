@@ -4,10 +4,83 @@
     @include width_100;
     &_products {
         @include width_100;
+        &_header {
+            @include direction_row;
+            justify-content: space-around;
+        }
         &_title {
             font-family: $font_family_texte;
             color: black;
             font-weight: bold;
         }
+        &_results {
+            @include width_100;
+            @include no_margin;
+            @include no_padding;
+            display: flex;
+            justify-content: center;
+            &_generic {
+                @include rounded_box;
+                @include no_padding;
+                display: flex;
+                background-color: map-get($colors, backgroung_color2);
+                justify-content: flex-start;
+                position: relative;
+            }
+        }
     }
+}
+
+.line {
+    margin: auto;
+    height: nth($pixel_size, 1)/10;
+    width: nth($pixel_size, 3)*10;
+    background-color: black;
+}
+
+.results_pics {
+    @include no_margin;
+    @include no_padding;
+    height: nth($pixel_size, 2)*10;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    &_size {
+        object-fit: cover;
+        width: 100%;
+        min-height: 170px;
+        max-height: 170px;
+        object-position: center;
+    }
+}
+
+.results_descriptions {
+    &_title {
+        font-size: nth($font_size, 2);
+        font-family: $font_family_title;
+        @include no_padding;
+        margin: nth($pixel_size, 1);
+        margin-left: 0;
+    }
+    &_text {
+        font-family: $font_family_texte;
+        &_price {
+            color: darken(map-get($colors, validation_color), 30%);
+            font-weight: bold;
+            font-size: nth($font_size, 2);
+            margin: nth($pixel_size, 1);
+            margin-left: 0;
+        }
+    }
+}
+
+.results_availability {
+    background-color: map-get($colors, validation_color);
+    height: nth($pixel_size, 3);
+    padding: nth($pixel_size, 5)/10;
+    margin: nth($pixel_size, 5)/10;
+    color: #fff;
+    position: absolute;
+    right: nth($pixel_size, 1);
+    top: nth($pixel_size, 1);
 }

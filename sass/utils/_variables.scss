@@ -4,6 +4,7 @@ sans-serif;
 $font_family_title: 'Mansalva',
 cursive;
 $shadow: 0px 5px 10px rgb(136, 132, 132);
+$arrondis_lege:10px;
 //lists
 $pixel_size: 10px,
 20px,
@@ -50,4 +51,10 @@ $colors: (primary_color:rgb(134, 99, 245), secondary_color:rgb(165, 112, 162), t
 
 @mixin item_center {
     align-items: center;
+}
+
+@mixin rounded_box {
+    border-radius: $arrondis_lege;
+    box-shadow: $shadow;
+    width: 95%;
 }

@@ -5,6 +5,8 @@
 
 body {
   background-color: #f1e9f0;
+  margin: 0%;
+  padding: 0%;
 }
 
 li {
@@ -127,9 +129,110 @@ p {
   width: 100%;
 }
 
+.main_products_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .main_products_title {
   font-family: "Source Sans Pro", sans-serif;
   color: black;
   font-weight: bold;
+}
+
+.main_products_results {
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main_products_results_generic {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 10px #888484;
+          box-shadow: 0px 5px 10px #888484;
+  width: 95%;
+  padding: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FFF;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+}
+
+.line {
+  margin: auto;
+  height: 1px;
+  width: 300px;
+  background-color: black;
+}
+
+.results_pics {
+  margin: 0%;
+  padding: 0%;
+  height: 200px;
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.results_pics_size {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  min-height: 170px;
+  max-height: 170px;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.results_descriptions_title {
+  font-size: 2rem;
+  font-family: "Mansalva", cursive;
+  padding: 0%;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.results_descriptions_text {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.results_descriptions_text_price {
+  color: #566f34;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.results_availability {
+  background-color: #a3c17b;
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 /*# sourceMappingURL=main.css.map */

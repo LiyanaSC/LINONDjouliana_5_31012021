@@ -1,0 +1,7 @@
+.main_teddy_bear {
+    &_result {
+        background-color: map-get($colors, backgroung_color2);
+        margin: nth($pixel_size, 1);
+        @include direction_row
+    }
+}

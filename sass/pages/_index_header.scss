@@ -30,6 +30,7 @@
         background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/teddy_5.jpg");
         background-position: bottom;
         background-attachment: fixed;
+        background-size: cover;
         text-shadow: $shadow;
         &_font {
             @include no_padding;

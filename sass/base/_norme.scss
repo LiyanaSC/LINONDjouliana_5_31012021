@@ -9,6 +9,7 @@ li {
 ul {
     display: block;
     padding: nth($pixel_size, 1);
+    @include no_margin;
 }
 
 a {

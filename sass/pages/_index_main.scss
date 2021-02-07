@@ -26,6 +26,7 @@
                 background-color: map-get($colors, backgroung_color2);
                 justify-content: flex-start;
                 position: relative;
+                margin-bottom: nth($pixel_size, 3);
             }
         }
     }

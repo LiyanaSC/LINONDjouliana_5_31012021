@@ -1,3 +1,19 @@
 .footer {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/teddy_5.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/macarons.jpg");
+    background-attachment: fixed;
+    background-size: contain;
+    @include direction_row;
+    justify-content: space-around;
+    padding: nth($pixel_size, 3);
+    &_nav {
+        @include direction_column;
+        &_title {
+            font-family: $font_family_title;
+            font-size: nth($font_size, 2);
+            margin: auto;
+            &_direction {
+                @include direction_column;
+            }
+        }
+    }
 }

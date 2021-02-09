@@ -21,7 +21,7 @@ $font_size: 1rem,
 4rem,
 5rem;
 //maps
-$colors: (primary_color:rgb(134, 99, 245), secondary_color:rgb(165, 112, 162), third_color:rgb(218, 142, 52), normal_color: black, background_color1:rgb(241, 233, 240), backgroung_color2:#FFF, validation_color:rgb(163, 193, 123), important_color:rgb(220, 118, 112));
+$colors: (primary_color:rgb(134, 99, 245), secondary_color:rgb(165, 112, 162), third_color:rgb(218, 142, 52), normal_color: black, background_color1:rgb(241, 233, 240), background_color2:#FFF, validation_color:rgb(163, 193, 123), important_color:rgb(220, 118, 112));
 //mixins
 @mixin no_padding {
     padding: 0%;

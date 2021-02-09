@@ -186,7 +186,7 @@ select {
 .line {
   margin: auto;
   height: 1px;
-  width: 300px;
+  width: 25%;
   background-color: black;
 }
 
@@ -248,7 +248,6 @@ select {
 .footer {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.4))), url("../../img/macarons.jpg");
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/macarons.jpg");
-  background-attachment: fixed;
   background-size: 100%;
   background-position: bottom;
   display: -webkit-box;
@@ -401,6 +400,94 @@ select {
 }
 
 .add_to_basket_box_btn:hover {
+  opacity: 0.9;
+}
+
+.arrangement_basket_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.my_basket {
+  margin: 0%;
+  padding: 0%;
+  width: 70%;
+}
+
+.my_basket_title {
+  margin: 10px;
+  font-family: "Mansalva", cursive;
+}
+
+.summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  width: 25%;
+  background-color: #FFF;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.summary_title {
+  width: 90%;
+}
+
+.summary_line {
+  margin: auto;
+  height: 1px;
+  width: 90%;
+  background-color: black;
+}
+
+.summary_detail {
+  width: 90%;
+}
+
+.summary_detail_box {
+  border-bottom: 1px gray dashed;
+  padding: 20px;
+}
+
+.summary_detail_validation {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.summary_detail_validation_btn {
+  background: linear-gradient(0.9turn, #8663f5, #a570a2);
+  -webkit-box-shadow: 0px 5px 10px #888484;
+          box-shadow: 0px 5px 10px #888484;
+  height: 40px;
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #fff;
+  right: 10px;
+  top: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.summary_detail_validation_btn:hover {
   opacity: 0.9;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,10 +1,8 @@
 @import "./utils/variables";
-@import "./base/semantique.scss";
-@import "./base/norme.scss";
-@import "./pages/index_header.scss";
-@import "./pages/index_main.scss";
-
-@import "./base/footer.scss";
-
-@import "./base/teddy_main_results.scss"
-
+@import "./base/semantique";
+@import "./base/norme";
+@import "./pages/index_header";
+@import "./pages/index_main";
+@import "./base/footer";
+@import "./base/teddy_main_results";
+@import "./base/basket"

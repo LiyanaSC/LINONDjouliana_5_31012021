@@ -1,0 +1,60 @@
+.arrangement_basket_page {
+    @include direction_row
+}
+
+.my_basket {
+    @include no_margin;
+    @include no_padding;
+    width: 70%;
+    &_title {
+        margin: nth($pixel_size, 1);
+        font-family: $font_family_title;
+    }
+}
+
+.summary {
+    @include direction_column;
+    margin: nth($pixel_size, 3);
+    align-items: center;
+    padding: nth($pixel_size, 2);
+    width: 25%;
+    background-color: map-get($colors, background_color2);
+    font-family: $font_family_texte;
+    &_title {
+        width: 90%;
+    }
+    &_line {
+        margin: auto;
+        height: nth($pixel_size, 1)/10;
+        width: 90%;
+        background-color: black;
+    }
+    &_detail {
+        width: 90%;
+        &_box {
+            border-bottom: 1px gray dashed;
+            padding: nth($pixel_size, 2);
+        }
+        &_validation {
+            @include width_100;
+            display: flex;
+            justify-content: center;
+            &_btn {
+                background: linear-gradient(0.9turn, map-get($colors, primary_color), map-get($colors, secondary_color));
+                box-shadow: $shadow;
+                height: nth($pixel_size, 4);
+                width: 90%;
+                margin-top: nth($pixel_size, 5);
+                margin-bottom: nth($pixel_size, 5);
+                color: #fff;
+                right: nth($pixel_size, 1);
+                top: nth($pixel_size, 1);
+                border-radius: 20px;
+                border: none;
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}

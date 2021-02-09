@@ -1,7 +1,8 @@
 .footer {
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/macarons.jpg");
     background-attachment: fixed;
-    background-size: contain;
+    background-size: 100%;
+    background-position: bottom;
     @include direction_row;
     justify-content: space-around;
     padding: nth($pixel_size, 3);

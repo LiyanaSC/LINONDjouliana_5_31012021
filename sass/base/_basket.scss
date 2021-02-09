@@ -42,6 +42,13 @@
         &_box {
             border-bottom: 1px gray dashed;
             padding: nth($pixel_size, 2);
+            &_articles {
+                color: map-get($colors, third_color);
+            }
+            &_price {
+                color: black;
+                font-weight: bold;
+            }
         }
         &_validation {
             @include width_100;

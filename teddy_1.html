@@ -45,12 +45,16 @@
         <!-- -------------------------------- DEBUT MAIN RESULTAT -------------------------------- -->
 
         <section class="main_teddy_bear_result">
+
+            <!--partie photo-->
             <div class="main_teddy_bear_result_pics">
                 <img srcset="img/teddy_1small.jpg 300vw, img/teddy_1medium.jpg 700vw, img/teddy_1.jpg 1280vw" sizes="30vw" src="img/teddy_1medium.jpg" alt="photo d'un ours en peluche brun au pelage doux et fournis" class="main_teddy_bear_result_pics_size">
                 <div class="results_availability">
                     <p>disponible</p>
                 </div>
             </div>
+
+            <!--partie description-->
             <div class="result_page_description">
                 <h3 class="result_page_description_title">Teddy Bear</h3>
                 <p class="result_page_description_text">Le doudou des rêveurs.</p>
@@ -59,7 +63,7 @@
 
                 <p class="results_descriptions_text_price">15€99</p>
 
-                <!-- menu deroulant -->
+                <!-- menu deroulant pour le choix des couleurs -->
                 <div class="color_choices">
                     <label for="pet-select" class="color_choices_title">Couleurs disponibles:</label>
 
@@ -85,29 +89,39 @@
 
     </main>
 
+
     <!-- -------------------------------- DEBUT FOOTER -------------------------------- -->
 
     <footer class="footer">
         <div class="footer_nav">
+            <!--partie contacts-->
             <h2 class="footer_nav_title">Contacts</h2>
             <nav>
                 <li>
                     <ul>
-                        <a href="#"> <i class="fab fa-facebook-square"></i></a>
+                        <a href="#" aria-label="contactez-nous par email"><i class="fas fa-envelope"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" aria-label="contactez-nous par telephone"><i class="fas fa-phone-square-alt"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-instagram-square"></i></a>
+                        <a href="#" aria-label="contactez-nous sur facebook"> <i class="fab fa-facebook-square"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-snapchat-square"></i></a>
+                        <a href="#" aria-label="suivez-nous sur twitter"><i class="fab fa-twitter-square"></i></a>
+                    </ul>
+                    <ul>
+                        <a href="#" aria-label="suivez-nous sur instragram"><i class="fab fa-instagram-square"></i></a>
+                    </ul>
+                    <ul>
+                        <a href="#" aria-label="suivez-nous sur snapchat"><i class="fab fa-snapchat-square"></i></a>
                     </ul>
 
                 </li>
             </nav>
         </div>
+        <!--partie assistance-->
+
         <div class="footer_nav">
             <h2 class="footer_nav_title">Asssitance</h2>
             <nav>
@@ -123,6 +137,7 @@
             </nav>
         </div>
 
+        <!--partie garantis-->
         <div class="footer_nav">
             <h2 class="footer_nav_title">Garantis</h2>
             <nav>
@@ -141,7 +156,6 @@
 
     </footer>
     <!-- -------------------------------- FIN FOOTER -------------------------------- -->
-
 </body>
 
 </html>

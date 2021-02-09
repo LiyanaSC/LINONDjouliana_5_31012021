@@ -11,6 +11,7 @@
     @include width_100;
     &_nav {
         @include direction_column;
+        text-align: center;
         &_title {
             font-family: $font_family_title;
             font-size: nth($font_size, 2);

@@ -45,6 +45,12 @@ p {
   margin: 0%;
 }
 
+.fas,
+.fab {
+  display: block;
+  font-size: 2rem;
+}
+
 select {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
@@ -86,6 +92,16 @@ select {
   display: -ms-flexbox;
   display: flex;
   width: 50%;
+}
+
+.header_upper_part_nav_basket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .header_title {
@@ -274,6 +290,7 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
 }
 
 .footer_nav_title {
@@ -305,6 +322,19 @@ select {
   margin: 0%;
 }
 
+@media screen and (max-width: 950px) {
+  .main_teddy_bear_result {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .main_teddy_bear_result_pics {
   height: 500px;
   position: relative;
@@ -324,6 +354,13 @@ select {
   width: 50%;
 }
 
+@media screen and (max-width: 950px) {
+  .result_page_description {
+    width: 90%;
+    text-align: center;
+  }
+}
+
 .result_page_description_title {
   font-size: 2rem;
   font-family: "Mansalva", cursive;
@@ -332,6 +369,13 @@ select {
   margin-left: 0;
   color: #da8e34;
   width: 50%;
+}
+
+@media screen and (max-width: 950px) {
+  .result_page_description_title {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .result_page_description_text {
@@ -344,6 +388,13 @@ select {
   font-size: 2rem;
   margin: 10px;
   margin-left: 0;
+}
+
+@media screen and (max-width: 950px) {
+  .result_page_description_text_price {
+    width: 90%;
+    text-align: center;
+  }
 }
 
 .color_choices {
@@ -400,6 +451,7 @@ select {
   top: 10px;
   border-radius: 20px;
   border: none;
+  margin: 50px;
 }
 
 .add_to_basket_box_btn:hover {
@@ -479,6 +531,15 @@ select {
 .summary_detail_box {
   border-bottom: 1px gray dashed;
   padding: 20px;
+}
+
+.summary_detail_box_articles {
+  color: #da8e34;
+}
+
+.summary_detail_box_price {
+  color: black;
+  font-weight: bold;
 }
 
 .summary_detail_validation {

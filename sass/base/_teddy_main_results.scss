@@ -4,6 +4,11 @@
         margin: nth($pixel_size, 1);
         @include direction_row;
         @include no_margin;
+        @media screen and (max-width: 950px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         &_pics {
             height: nth($pixel_size, 5)*10;
             position: relative;
@@ -20,6 +25,10 @@
 
 .result_page_description {
     width: 50%;
+    @media screen and (max-width: 950px) {
+        width: 90%;
+        text-align: center;
+    }
     &_title {
         font-size: nth($font_size, 2);
         font-family: $font_family_title;
@@ -28,6 +37,10 @@
         margin-left: 0;
         color: map-get($colors, third_color);
         width: 50%;
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            text-align: center;
+        }
     }
     &_text {
         font-family: $font_family_texte;
@@ -37,6 +50,10 @@
             font-size: nth($font_size, 2);
             margin: nth($pixel_size, 1);
             margin-left: 0;
+            @media screen and (max-width: 950px) {
+                width: 90%;
+                text-align: center;
+            }
         }
     }
 }
@@ -79,6 +96,7 @@
         top: nth($pixel_size, 1);
         border-radius: 20px;
         border: none;
+        margin: nth($pixel_size, 5);
         &:hover {
             opacity: 0.9;
         }

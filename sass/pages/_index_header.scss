@@ -16,6 +16,9 @@
         &_nav {
             display: flex;
             width: 50%;
+            &_basket {
+                @include direction_row;
+            }
         }
     }
     &_title {

@@ -21,8 +21,8 @@
 <body>
     <!-- -------------------------------- DEBUT EN TETE -------------------------------- -->
     <header class="header">
-        <!-- -->
-        <!-- partie haute header -->
+
+
         <div class="header_upper_part">
             <!-- logo -->
             <div class="header_upper_part_logo_box">
@@ -33,11 +33,13 @@
             <nav class="header_upper_part_nav">
                 <li>
                     <ul><a href="#">Connexion</a> </ul>
-                    <ul><a href="panier.html"><i class="fas fa-shopping-basket"></i> <p>0.00€</p></a></ul>
+                    <ul class="header_upper_part_nav_basket"><a href="panier.html"><i class="fas fa-shopping-basket"></i> <p>0.00€</p></a></ul>
                 </li>
             </nav>
         </div>
-        <!--  partie basse & description du site -->
+
+
+        <!--  description du site -->
         <div class="header_title">
             <h1 class="header_title_font">Oridoudou</h1>
 
@@ -60,12 +62,16 @@
                 <div class="line"></div>
             </header>
 
+
             <!-- boite de résultat -->
             <div class="main_products_results">
                 <a href="teddy_1.html" class="main_products_results_generic">
+                    <!--image du produit-->
                     <div class="results_pics">
                         <img srcset="img/teddy_1small.jpg 300vw, img/teddy_1medium.jpg 700vw, img/teddy_1.jpg 1280vw" sizes="30vw" src="img/teddy_1medium.jpg" alt="photo d'un ours en peluche brun au pelage doux et fournis" class="results_pics_size">
                     </div>
+
+                    <!--description du produit-->
                     <div class="results_descriptions">
                         <h3 class="results_descriptions_title">Teddy Bear</h3>
                         <p class="results_descriptions_text">Le doudou des rêveurs.</p>
@@ -78,11 +84,9 @@
                     <div class="results_availability">
                         <p>disponible</p>
                     </div>
-
-
                 </a>
-
             </div>
+
 
         </section>
     </main>
@@ -92,25 +96,34 @@
 
     <footer class="footer">
         <div class="footer_nav">
+            <!--partie contacts-->
             <h2 class="footer_nav_title">Contacts</h2>
             <nav>
                 <li>
                     <ul>
-                        <a href="#"> <i class="fab fa-facebook-square"></i></a>
+                        <a href="#" aria-label="contactez-nous par email"><i class="fas fa-envelope"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" aria-label="contactez-nous par telephone"><i class="fas fa-phone-square-alt"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-instagram-square"></i></a>
+                        <a href="#" aria-label="contactez-nous sur facebook"> <i class="fab fa-facebook-square"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-snapchat-square"></i></a>
+                        <a href="#" aria-label="suivez-nous sur twitter"><i class="fab fa-twitter-square"></i></a>
+                    </ul>
+                    <ul>
+                        <a href="#" aria-label="suivez-nous sur instragram"><i class="fab fa-instagram-square"></i></a>
+                    </ul>
+                    <ul>
+                        <a href="#" aria-label="suivez-nous sur snapchat"><i class="fab fa-snapchat-square"></i></a>
                     </ul>
 
                 </li>
             </nav>
         </div>
+        <!--partie assistance-->
+
         <div class="footer_nav">
             <h2 class="footer_nav_title">Asssitance</h2>
             <nav>
@@ -126,6 +139,7 @@
             </nav>
         </div>
 
+        <!--partie garantis-->
         <div class="footer_nav">
             <h2 class="footer_nav_title">Garantis</h2>
             <nav>

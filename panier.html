@@ -47,8 +47,15 @@
             <h2 class="summary_title">Récapitulatif</h2>
             <div class="summary_line"></div>
             <div class="summary_detail">
-                <p class="summary_detail_box">Panier (<span>1</span>)</p>
-                <p class="summary_detail_box"><span>Total </span>(tva incluse)</p>
+                <div class="summary_detail_box">
+                    <p>Panier (<span>1</span>)</p>
+                    <p class="summary_detail_box_articles">Teddy Bear <span class="summary_detail_box_price">15.99€</span></p>
+
+                </div>
+                <div class="summary_detail_box">
+                    <p><span>Total </span>(tva incluse)</p>
+                    <p class="summary_detail_box_price">15.99€</p>
+                </div>
                 <div class="summary_detail_validation">
                     <button class="summary_detail_validation_btn">
                     <a href="validation.html">Valider mon panier</a>
@@ -62,43 +69,43 @@
             <h1 class="information_title"> Information client</h1>
             <form>
                 <div class="information_section">
-                    <input type="radio" id="madame" name="sexe">
+                    <input type="radio" id="madame" name="sexe" aria-label="choix du sexe féminim, madame">
                     <label for="madame">Madame</label>
-                    <input type="radio" id="monsieur" name="sexe">
+                    <input type="radio" id="monsieur" name="sexe" aria-label="choix sexe masculin, monsieur">
                     <label for="monsieur">Monsieur</label>
                 </div>
 
                 <div class="information_section">
                     <label for="lastname" class="label_client_form">Nom* </label>
-                    <input type="text" name="lastname" id="lastname" placeholder="Linon" class="input_space_adaptation" required>
+                    <input type="text" name="lastname" id="lastname" placeholder="Linon" class="input_space_adaptation" aria-label="taper votre nom de famille" required>
                     <label for="firstname" class="label_client_form">Prénom* </label>
-                    <input type="text" name="firstname" id="lastname" placeholder="Liyana" class="input_space_adaptation" required>
+                    <input type="text" name="firstname" id="lastname" placeholder="Liyana" class="input_space_adaptation" aria-label="taper votre prénom" required>
                     <label for="dateOfBirth" class="label_client_form">Date de Naissance* </label>
-                    <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="19/02/1991" class="input_space_adaptation" required>
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="19/02/1991" class="input_space_adaptation" aria-label="entrer votre date de naissance" required>
                 </div>
 
                 <div class="information_section">
                     <label for="adress" class="label_client_form">Adresse* </label>
-                    <input type="text" name="adress" id="adress" placeholder="Rue, avenue, quartier, boulevard,..." class="input_space_adaptation" required>
+                    <input type="text" name="adress" id="adress" placeholder="Rue, avenue, quartier, boulevard,..." class="input_space_adaptation" aria-label="taper votre adresse" required>
                 </div>
 
                 <div class="information_section">
                     <label for="additionelAdress" class="label_client_form">Complément d'adresse </label>
-                    <input type="text" name="additionelAdress" id="additionelAdress" placeholder="étage, code, escalier, batiment, etc.." class="input_space_adaptation" required>
+                    <input type="text" name="additionelAdress" id="additionelAdress" placeholder="étage, code, escalier, batiment, etc.." class="input_space_adaptation" aria-label="taper votre complément d'adresse si nécessaire" required>
                 </div>
 
                 <div class="information_section">
                     <label for="zip" class="label_client_form">Code postale* </label>
-                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" required>
+                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" aria-label="taper votre code postale" required>
                     <label for="city" class="label_client_form">Ville* </label>
-                    <input type="text" name="city" id="city" placeholder="Fort-de-France" class="input_space_adaptation" required>
+                    <input type="text" name="city" id="city" placeholder="Fort-de-France" class="input_space_adaptation" aria-label="taper votre ville" required>
                 </div>
 
                 <div class="information_section">
                     <label for="telephone" class="label_client_form">Telephone </label>
-                    <input type="tel" name="telephone" id="telephone" placeholder="0101010101" minlength="10" maxlength="10">
+                    <input type="tel" name="telephone" id="telephone" placeholder="0101010101" minlength="10" maxlength="10" aria-label="taper votre numéro de téléphone">
                     <label for="email" class="label_client_form">Adresse email* </label>
-                    <input type="email" name="email" id="email" placeholder="monadressemail@maboit.com" class="input_space_adaptation" required>
+                    <input type="email" name="email" id="email" placeholder="monadressemail@maboite.com" class="input_space_adaptation" aria-label="taper votre adresse email" required>
                 </div>
 
 
@@ -108,30 +115,38 @@
 
 
     </main>
-
     <!-- -------------------------------- DEBUT FOOTER -------------------------------- -->
 
     <footer class="footer">
         <div class="footer_nav">
+            <!--partie contacts-->
             <h2 class="footer_nav_title">Contacts</h2>
             <nav>
                 <li>
                     <ul>
-                        <a href="#"> <i class="fab fa-facebook-square"></i></a>
+                        <a href="#" aria-label="contactez-nous par email"><i class="fas fa-envelope"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" aria-label="contactez-nous par telephone"><i class="fas fa-phone-square-alt"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-instagram-square"></i></a>
+                        <a href="#" aria-label="contactez-nous sur facebook"> <i class="fab fa-facebook-square"></i></a>
                     </ul>
                     <ul>
-                        <a href="#"><i class="fab fa-snapchat-square"></i></a>
+                        <a href="#" aria-label="suivez-nous sur twitter"><i class="fab fa-twitter-square"></i></a>
+                    </ul>
+                    <ul>
+                        <a href="#" aria-label="suivez-nous sur instragram"><i class="fab fa-instagram-square"></i></a>
+                    </ul>
+                    <ul>
+                        <a href="#" aria-label="suivez-nous sur snapchat"><i class="fab fa-snapchat-square"></i></a>
                     </ul>
 
                 </li>
             </nav>
         </div>
+        <!--partie assistance-->
+
         <div class="footer_nav">
             <h2 class="footer_nav_title">Asssitance</h2>
             <nav>
@@ -147,6 +162,7 @@
             </nav>
         </div>
 
+        <!--partie garantis-->
         <div class="footer_nav">
             <h2 class="footer_nav_title">Garantis</h2>
             <nav>

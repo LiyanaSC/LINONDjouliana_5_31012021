@@ -24,6 +24,12 @@ p {
     @include no_margin;
 }
 
+.fas,
+.fab {
+    display: block;
+    font-size: nth($font_size, 2);
+}
+
 select {
     font-family: $font_family_texte;
     font-size: nth($font_size, 1);

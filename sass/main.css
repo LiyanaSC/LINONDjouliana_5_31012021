@@ -368,7 +368,6 @@ select {
   font-size: 1rem;
   background-color: #da8e34;
   padding: 5px;
-  width: 100%;
 }
 
 .color_choices_selection {
@@ -523,5 +522,46 @@ select {
 .label_client_form {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.valadion_page {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.4))), url("../../img/pink_bear.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/pink_bear.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.valadion_page_disposition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+}
+
+.valadion_page_disposition_title {
+  font-family: "Mansalva", cursive;
+}
+
+.valadion_page_disposition_text {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.valadion_page_disposition_lien {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  margin-top: 50px;
+  color: #8663f5;
 }
 /*# sourceMappingURL=main.css.map */

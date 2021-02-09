@@ -54,7 +54,6 @@
         font-size: 1rem;
         background-color: map-get($colors, third_color);
         padding: nth($pixel_size, 1)/2;
-        @include width_100
     }
     &_selection {
         text-decoration: none;

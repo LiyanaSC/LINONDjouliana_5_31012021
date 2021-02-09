@@ -5,6 +5,7 @@
     @include direction_row;
     justify-content: space-around;
     padding: nth($pixel_size, 3);
+    min-height: 200px;
     &_nav {
         @include direction_column;
         &_title {

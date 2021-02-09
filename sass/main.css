@@ -245,17 +245,11 @@ select {
   top: 10px;
 }
 
-
 .footer {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.4))), url("../../img/macarons.jpg");
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/macarons.jpg");
   background-attachment: fixed;
   background-size: contain;
-
-.main_teddy_bear_result {
-  background-color: #FFF;
-  margin: 10px;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,14 +257,49 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 30px;
+  min-height: 200px;
 }
 
 .footer_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 
+.footer_nav_title {
+  font-family: "Mansalva", cursive;
+  font-size: 2rem;
+  margin: auto;
+}
+
+.footer_nav_title_direction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main_teddy_bear_result {
+  background-color: #FFF;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0%;
 }
 
 .main_teddy_bear_result_pics {
@@ -315,7 +344,6 @@ select {
 }
 
 .color_choices {
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -323,24 +351,6 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-
-}
-
-.footer_nav_title {
-  font-family: "Mansalva", cursive;
-  font-size: 2rem;
-  margin: auto;
-}
-
-.footer_nav_title_direction {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-
   width: 50%;
   font-family: "Source Sans Pro", sans-serif;
   margin: auto;
@@ -391,6 +401,5 @@ select {
 
 .add_to_basket_box_btn:hover {
   opacity: 0.9;
-
 }
 /*# sourceMappingURL=main.css.map */

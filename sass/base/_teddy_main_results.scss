@@ -3,6 +3,7 @@
         background-color: map-get($colors, background_color2);
         margin: nth($pixel_size, 1);
         @include direction_row;
+        @include no_margin;
         &_pics {
             height: nth($pixel_size, 5)*10;
             position: relative;

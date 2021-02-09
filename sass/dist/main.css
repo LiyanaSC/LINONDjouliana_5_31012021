@@ -127,7 +127,7 @@ select {
 .line {
   margin: auto;
   height: 1px;
-  width: 300px;
+  width: 25%;
   background-color: black;
 }
 
@@ -179,7 +179,6 @@ select {
 
 .footer {
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/macarons.jpg");
-  background-attachment: fixed;
   background-size: 100%;
   background-position: bottom;
   display: flex;
@@ -187,6 +186,9 @@ select {
   justify-content: space-around;
   padding: 30px;
   min-height: 200px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 .footer_nav {
   display: flex;
@@ -259,6 +261,7 @@ select {
   font-size: 1rem;
   background-color: #da8e34;
   padding: 5px;
+  width: 100%;
 }
 .color_choices_selection {
   text-decoration: none;
@@ -287,4 +290,86 @@ select {
 }
 .add_to_basket_box_btn:hover {
   opacity: 0.9;
+}
+
+.arrangement_basket_page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.information {
+  margin: 0%;
+  padding: 0%;
+  width: 70%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.information_title {
+  margin: 10px;
+  font-family: "Mansalva", cursive;
+  margin-bottom: 20px;
+}
+.information_section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 25%;
+  background-color: #FFF;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.summary_title {
+  width: 90%;
+}
+.summary_line {
+  margin: auto;
+  height: 1px;
+  width: 90%;
+  background-color: black;
+}
+.summary_detail {
+  width: 90%;
+}
+.summary_detail_box {
+  border-bottom: 1px gray dashed;
+  padding: 20px;
+}
+.summary_detail_validation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.summary_detail_validation_btn {
+  background: linear-gradient(0.9turn, #8663f5, #a570a2);
+  box-shadow: 0px 5px 10px #888484;
+  height: 40px;
+  width: 90%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #fff;
+  right: 10px;
+  top: 10px;
+  border-radius: 20px;
+  border: none;
+}
+.summary_detail_validation_btn:hover {
+  opacity: 0.9;
+}
+
+.input_space_adaptation {
+  display: flex;
+  flex: 1;
+}
+
+.label_client_form {
+  margin-right: 10px;
+  margin-left: 10px;
 }

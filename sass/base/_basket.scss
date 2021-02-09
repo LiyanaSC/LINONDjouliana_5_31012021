@@ -1,20 +1,28 @@
 .arrangement_basket_page {
-    @include direction_row
+    @include direction_row;
+    justify-content: space-around;
+    margin-bottom: nth($pixel_size, 3);
 }
 
-.my_basket {
+.information {
     @include no_margin;
     @include no_padding;
     width: 70%;
+    font-family: $font_family_texte;
     &_title {
         margin: nth($pixel_size, 1);
         font-family: $font_family_title;
+        margin-bottom: nth($pixel_size, 2);
+    }
+    &_section {
+        margin-top: nth($pixel_size, 2);
+        margin-bottom: nth($pixel_size, 2);
+        @include direction_row
     }
 }
 
 .summary {
     @include direction_column;
-    margin: nth($pixel_size, 3);
     align-items: center;
     padding: nth($pixel_size, 2);
     width: 25%;
@@ -57,4 +65,14 @@
             }
         }
     }
+}
+
+.input_space_adaptation {
+    display: flex;
+    flex: 1;
+}
+
+.label_client_form {
+    margin-right: nth($pixel_size, 1);
+    margin-left: nth($pixel_size, 1);
 }

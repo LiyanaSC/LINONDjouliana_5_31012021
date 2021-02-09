@@ -6,6 +6,9 @@
     justify-content: space-around;
     padding: nth($pixel_size, 3);
     min-height: 200px;
+    position: relative;
+    bottom: 0;
+    @include width_100;
     &_nav {
         @include direction_column;
         &_title {

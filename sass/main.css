@@ -261,6 +261,9 @@ select {
       justify-content: space-around;
   padding: 30px;
   min-height: 200px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer_nav {
@@ -365,6 +368,7 @@ select {
   font-size: 1rem;
   background-color: #da8e34;
   padding: 5px;
+  width: 100%;
 }
 
 .color_choices_selection {
@@ -411,17 +415,34 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 30px;
 }
 
-.my_basket {
+.information {
   margin: 0%;
   padding: 0%;
   width: 70%;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.my_basket_title {
+.information_title {
   margin: 10px;
   font-family: "Mansalva", cursive;
+  margin-bottom: 20px;
+}
+
+.information_section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .summary {
@@ -432,7 +453,6 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -489,5 +509,19 @@ select {
 
 .summary_detail_validation_btn:hover {
   opacity: 0.9;
+}
+
+.input_space_adaptation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.label_client_form {
+  margin-right: 10px;
+  margin-left: 10px;
 }
 /*# sourceMappingURL=main.css.map */

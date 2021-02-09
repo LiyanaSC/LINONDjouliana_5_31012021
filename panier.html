@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Bienvenue dans un monde de douceur: Teddy Bears, Nounours, ourson, ours en peluche partenaires de calins idéals pour vos êtres chers.">
     <meta name="robots" content="index,follow">
-    <link rel="shortcut icon" type="image/png" href="favicon.jpg">
+    <link rel="shortcut icon" type="image/png" href="img/logo_small.png">
     <!-- -------------------------------- style -------------------------------- -->
     <link rel="stylesheet" href="sass/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/29576c135b.js" crossorigin="anonymous"></script>
 
 
-    <title>Oridoudou. Teddy Bear, Nounours à adopter!</title>
+    <title>Oridoudou. Mon panier</title>
 </head>
 
 <body>
@@ -42,27 +42,65 @@
 
     <!-- -------------------------------- DEBUT EN Main -------------------------------- -->
     <main class="arrangement_basket_page">
-
+        <!-- récapitulatif achat client-->
         <aside class="summary">
             <h2 class="summary_title">Récapitulatif</h2>
             <div class="summary_line"></div>
             <div class="summary_detail">
                 <p class="summary_detail_box">Panier (<span>1</span>)</p>
-                <p class="summary_detail_box"><span>Total</span>(tva incluse)</p>
+                <p class="summary_detail_box"><span>Total </span>(tva incluse)</p>
                 <div class="summary_detail_validation">
                     <button class="summary_detail_validation_btn">
-                    <p>Valider mon panier</p>
+                    <a href="validation.html">Valider mon panier</a>
                 </button>
                 </div>
             </div>
 
         </aside>
-
-        <section class="my_basket">
-            <h1 class="my_basket_title"> Information client</h1>
+        <!-- formulaire clients -->
+        <section class="information">
+            <h1 class="information_title"> Information client</h1>
             <form>
-                <label for="lastname">Nom</label>
-                <input type="text" name="lastname" id="lastname" required>
+                <div class="information_section">
+                    <input type="radio" id="madame" name="sexe">
+                    <label for="madame">Madame</label>
+                    <input type="radio" id="monsieur" name="sexe">
+                    <label for="monsieur">Monsieur</label>
+                </div>
+
+                <div class="information_section">
+                    <label for="lastname" class="label_client_form">Nom* </label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Linon" class="input_space_adaptation" required>
+                    <label for="firstname" class="label_client_form">Prénom* </label>
+                    <input type="text" name="firstname" id="lastname" placeholder="Liyana" class="input_space_adaptation" required>
+                    <label for="dateOfBirth" class="label_client_form">Date de Naissance* </label>
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="19/02/1991" class="input_space_adaptation" required>
+                </div>
+
+                <div class="information_section">
+                    <label for="adress" class="label_client_form">Adresse* </label>
+                    <input type="text" name="adress" id="adress" placeholder="Rue, avenue, quartier, boulevard,..." class="input_space_adaptation" required>
+                </div>
+
+                <div class="information_section">
+                    <label for="additionelAdress" class="label_client_form">Complément d'adresse </label>
+                    <input type="text" name="additionelAdress" id="additionelAdress" placeholder="étage, code, escalier, batiment, etc.." class="input_space_adaptation" required>
+                </div>
+
+                <div class="information_section">
+                    <label for="zip" class="label_client_form">Code postale* </label>
+                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" required>
+                    <label for="city" class="label_client_form">Ville* </label>
+                    <input type="text" name="city" id="city" placeholder="Fort-de-France" class="input_space_adaptation" required>
+                </div>
+
+                <div class="information_section">
+                    <label for="telephone" class="label_client_form">Telephone </label>
+                    <input type="tel" name="telephone" id="telephone" placeholder="0101010101" minlength="10" maxlength="10">
+                    <label for="email" class="label_client_form">Adresse email* </label>
+                    <input type="email" name="email" id="email" placeholder="monadressemail@maboit.com" class="input_space_adaptation" required>
+                </div>
+
 
 
             </form>

@@ -23,3 +23,8 @@ p {
     @include no_padding;
     @include no_margin;
 }
+
+select {
+    font-family: $font_family_texte;
+    font-size: nth($font_size, 1);
+}

@@ -45,6 +45,11 @@ p {
   margin: 0%;
 }
 
+select {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+}
+
 .header {
   margin: 0%;
   padding: 0%;
@@ -186,7 +191,7 @@ p {
 }
 
 .results_pics {
-  margin: 0%;
+  margin: 10px;
   padding: 0%;
   height: 200px;
   width: 25%;
@@ -214,6 +219,7 @@ p {
   padding: 0%;
   margin: 10px;
   margin-left: 0;
+  color: #da8e34;
 }
 
 .results_descriptions_text {
@@ -239,11 +245,17 @@ p {
   top: 10px;
 }
 
+
 .footer {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.4))), url("../../img/macarons.jpg");
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)), url("../../img/macarons.jpg");
   background-attachment: fixed;
   background-size: contain;
+
+.main_teddy_bear_result {
+  background-color: #FFF;
+  margin: 10px;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,12 +263,59 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding: 30px;
 }
 
 .footer_nav {
+
+}
+
+.main_teddy_bear_result_pics {
+  height: 500px;
+  position: relative;
+}
+
+.main_teddy_bear_result_pics_size {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.result_page_description {
+  width: 50%;
+}
+
+.result_page_description_title {
+  font-size: 2rem;
+  font-family: "Mansalva", cursive;
+  padding: 0%;
+  margin: 10px;
+  margin-left: 0;
+  color: #da8e34;
+  width: 50%;
+}
+
+.result_page_description_text {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.result_page_description_text_price {
+  color: #566f34;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.color_choices {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,6 +323,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
 }
 
 .footer_nav_title {
@@ -280,5 +340,57 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
+  width: 50%;
+  font-family: "Source Sans Pro", sans-serif;
+  margin: auto;
+  margin-top: 50px;
+  border: 3px #da8e34 solid;
+  -webkit-box-shadow: 0px 5px 10px #888484;
+          box-shadow: 0px 5px 10px #888484;
+}
+
+.color_choices_title {
+  color: #fff;
+  font-size: 1rem;
+  background-color: #da8e34;
+  padding: 5px;
+}
+
+.color_choices_selection {
+  text-decoration: none;
+  background-color: transparent;
+  height: 30px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.add_to_basket_box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add_to_basket_box_btn {
+  background: linear-gradient(0.9turn, #8663f5, #a570a2);
+  -webkit-box-shadow: 0px 5px 10px #888484;
+          box-shadow: 0px 5px 10px #888484;
+  height: 40px;
+  width: 30%;
+  margin-top: 50px;
+  color: #fff;
+  right: 10px;
+  top: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.add_to_basket_box_btn:hover {
+  opacity: 0.9;
+
 }
 /*# sourceMappingURL=main.css.map */

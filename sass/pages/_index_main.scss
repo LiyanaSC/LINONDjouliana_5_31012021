@@ -23,7 +23,7 @@
                 @include rounded_box;
                 @include no_padding;
                 display: flex;
-                background-color: map-get($colors, backgroung_color2);
+                background-color: map-get($colors, background_color2);
                 justify-content: flex-start;
                 position: relative;
                 margin-bottom: nth($pixel_size, 3);
@@ -40,7 +40,7 @@
 }
 
 .results_pics {
-    @include no_margin;
+    margin: 10px;
     @include no_padding;
     height: nth($pixel_size, 2)*10;
     width: 25%;
@@ -62,6 +62,7 @@
         @include no_padding;
         margin: nth($pixel_size, 1);
         margin-left: 0;
+        color: map-get($colors, third_color);
     }
     &_text {
         font-family: $font_family_texte;

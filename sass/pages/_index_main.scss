@@ -12,6 +12,7 @@
             font-family: $font_family_texte;
             color: black;
             font-weight: bold;
+            text-align: center;
         }
         &_results {
             @include width_100;

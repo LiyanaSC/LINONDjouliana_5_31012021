@@ -7,17 +7,34 @@
     &_upper_part {
         @include direction_row;
         @include width_100;
+        flex-wrap: wrap;
         //logo
         &_logo_box {
             display: flex;
             width: 50%;
+            @media screen and (max-width: 950px) {
+                width: 100%;
+                justify-content: center;
+            }
         }
         //navigation
         &_nav {
             display: flex;
             width: 50%;
+            font-size: 2rem;
+            @media screen and (max-width: 950px) {
+                width: 100%;
+            }
             &_basket {
                 @include direction_row;
+                align-items: center;
+            }
+            &_list {
+                @media screen and (max-width: 950px) {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                }
             }
         }
     }
@@ -38,6 +55,9 @@
         &_font {
             @include no_padding;
             @include no_margin;
+            @media screen and (max-width: 950px) {
+                font-size: nth($font_size, 4);
+            }
         }
     }
 }

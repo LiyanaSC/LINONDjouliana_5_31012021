@@ -34,3 +34,7 @@ select {
     font-family: $font_family_texte;
     font-size: nth($font_size, 1);
 }
+
+.fa-shopping-basket {
+    margin-right: nth($pixel_size, 1);
+}

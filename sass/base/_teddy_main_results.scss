@@ -71,6 +71,9 @@
         font-size: 1rem;
         background-color: map-get($colors, third_color);
         padding: nth($pixel_size, 1)/2;
+        @media screen and (max-width: 950px) {
+            text-align: left;
+        }
     }
     &_selection {
         text-decoration: none;

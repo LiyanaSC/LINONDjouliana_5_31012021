@@ -9,13 +9,21 @@
     position: relative;
     bottom: 0;
     @include width_100;
+    flex-wrap: wrap;
     &_nav {
         @include direction_column;
         text-align: center;
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
         &_title {
             font-family: $font_family_title;
             font-size: nth($font_size, 2);
             margin: auto;
+            color: map-get($colors, primary_color);
             &_direction {
                 @include direction_column;
             }

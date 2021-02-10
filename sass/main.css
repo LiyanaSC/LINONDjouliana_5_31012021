@@ -56,6 +56,10 @@ select {
   font-size: 1rem;
 }
 
+.fa-shopping-basket {
+  margin-right: 10px;
+}
+
 .header {
   margin: 0%;
   padding: 0%;
@@ -78,6 +82,8 @@ select {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .header_upper_part_logo_box {
@@ -87,11 +93,27 @@ select {
   width: 50%;
 }
 
+@media screen and (max-width: 950px) {
+  .header_upper_part_logo_box {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .header_upper_part_nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 50%;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 950px) {
+  .header_upper_part_nav {
+    width: 100%;
+  }
 }
 
 .header_upper_part_nav_basket {
@@ -102,6 +124,21 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 950px) {
+  .header_upper_part_nav_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .header_title {
@@ -136,6 +173,12 @@ select {
   margin: 0%;
 }
 
+@media screen and (max-width: 950px) {
+  .header_title_font {
+    font-size: 4rem;
+  }
+}
+
 .site_description {
   font-size: 2rem;
   text-align: center;
@@ -168,6 +211,7 @@ select {
   font-family: "Source Sans Pro", sans-serif;
   color: black;
   font-weight: bold;
+  text-align: center;
 }
 
 .main_products_results {
@@ -280,6 +324,8 @@ select {
   position: relative;
   bottom: 0;
   width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .footer_nav {
@@ -293,10 +339,24 @@ select {
   text-align: center;
 }
 
+@media screen and (max-width: 950px) {
+  .footer_nav {
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .footer_nav_title {
   font-family: "Mansalva", cursive;
   font-size: 2rem;
   margin: auto;
+  color: #8663f5;
 }
 
 .footer_nav_title_direction {
@@ -421,6 +481,12 @@ select {
   padding: 5px;
 }
 
+@media screen and (max-width: 950px) {
+  .color_choices_title {
+    text-align: left;
+  }
+}
+
 .color_choices_selection {
   text-decoration: none;
   background-color: transparent;
@@ -469,6 +535,8 @@ select {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-bottom: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .information {
@@ -484,6 +552,19 @@ select {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 950px) {
+  .information_title {
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .information_section {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -494,6 +575,24 @@ select {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+@media screen and (max-width: 950px) {
+  .information_section {
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .summary {
@@ -513,8 +612,30 @@ select {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+@media screen and (max-width: 950px) {
+  .summary {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
 .summary_title {
   width: 90%;
+}
+
+@media screen and (max-width: 950px) {
+  .summary_title {
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .summary_line {
@@ -526,6 +647,19 @@ select {
 
 .summary_detail {
   width: 90%;
+}
+
+@media screen and (max-width: 950px) {
+  .summary_detail {
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .summary_detail_box {
@@ -580,9 +714,23 @@ select {
           flex: 1;
 }
 
+@media screen and (max-width: 950px) {
+  .input_space_adaptation {
+    display: block;
+    width: 100%;
+  }
+}
+
 .label_client_form {
   margin-right: 10px;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .label_client_form {
+    display: block;
+    width: 100%;
+  }
 }
 
 .valadion_page {

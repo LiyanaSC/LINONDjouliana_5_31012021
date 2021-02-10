@@ -2,6 +2,7 @@
     @include direction_row;
     justify-content: space-around;
     margin-bottom: nth($pixel_size, 3);
+    flex-wrap: wrap;
 }
 
 .information {
@@ -13,11 +14,24 @@
         margin: nth($pixel_size, 1);
         font-family: $font_family_title;
         margin-bottom: nth($pixel_size, 2);
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
     }
     &_section {
         margin-top: nth($pixel_size, 2);
         margin-bottom: nth($pixel_size, 2);
-        @include direction_row
+        @include direction_row @media screen and (max-width: 950px) {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -28,8 +42,18 @@
     width: 25%;
     background-color: map-get($colors, background_color2);
     font-family: $font_family_texte;
+    @media screen and (max-width: 950px) {
+        width: 100%;
+        order: 2;
+    }
     &_title {
         width: 90%;
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
     }
     &_line {
         margin: auto;
@@ -39,6 +63,12 @@
     }
     &_detail {
         width: 90%;
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
         &_box {
             border-bottom: 1px gray dashed;
             padding: nth($pixel_size, 2);
@@ -77,9 +107,17 @@
 .input_space_adaptation {
     display: flex;
     flex: 1;
+    @media screen and (max-width: 950px) {
+        display: block;
+        width: 100%;
+    }
 }
 
 .label_client_form {
     margin-right: nth($pixel_size, 1);
     margin-left: nth($pixel_size, 1);
+    @media screen and (max-width: 950px) {
+        display: block;
+        width: 100%;
+    }
 }

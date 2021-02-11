@@ -10,6 +10,7 @@
             justify-content: center;
         }
         &_pics {
+            margin: nth($pixel_size, 2);
             height: nth($pixel_size, 5)*10;
             position: relative;
             &_size {

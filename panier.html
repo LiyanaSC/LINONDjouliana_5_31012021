@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/29576c135b.js" crossorigin="anonymous"></script>
+    <script src="./javascript/validation_form.js"></script>
 
 
     <title>Oridoudou. Mon panier</title>
@@ -67,7 +68,7 @@
         <!-- formulaire clients -->
         <section class="information">
             <h1 class="information_title"> Information client</h1>
-            <form>
+            <form name="informationsClient" method="post">
                 <div class="information_section">
                     <input type="radio" id="madame" name="sexe" aria-label="choix du sexe féminim, madame">
                     <label for="madame">Madame</label>
@@ -77,33 +78,24 @@
 
                 <div class="information_section">
                     <label for="lastname" class="label_client_form">Nom* </label>
-                    <input type="text" name="lastname" id="lastname" placeholder="Linon" class="input_space_adaptation" aria-label="taper votre nom de famille" required>
+                    <input type="text" name="lastname" id="lastname" placeholder="Linon" class="input_space_adaptation" aria-label="taper votre nom de famille" pattern="[A-Za-z -]{4,40}" required>
                     <label for="firstname" class="label_client_form">Prénom* </label>
-                    <input type="text" name="firstname" id="lastname" placeholder="Liyana" class="input_space_adaptation" aria-label="taper votre prénom" required>
-                    <label for="dateOfBirth" class="label_client_form">Date de Naissance* </label>
-                    <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="19/02/1991" class="input_space_adaptation" aria-label="entrer votre date de naissance" required>
+                    <input type="text" name="firstname" id="lastname" placeholder="Liyana" class="input_space_adaptation" aria-label="taper votre prénom" pattern="[A-Za-z -]{4,40}" required>
                 </div>
 
                 <div class="information_section">
                     <label for="adress" class="label_client_form">Adresse* </label>
-                    <input type="text" name="adress" id="adress" placeholder="Rue, avenue, quartier, boulevard,..." class="input_space_adaptation" aria-label="taper votre adresse" required>
-                </div>
-
-                <div class="information_section">
-                    <label for="additionelAdress" class="label_client_form">Complément d'adresse </label>
-                    <input type="text" name="additionelAdress" id="additionelAdress" placeholder="étage, code, escalier, batiment, etc.." class="input_space_adaptation" aria-label="taper votre complément d'adresse si nécessaire" required>
+                    <input type="text" name="adress" id="adress" placeholder="Rue, avenue, quartier, boulevard,..." class="input_space_adaptation" aria-label="taper votre adresse" pattern="[A-Za-z0-9 -]{4,40}" required>
                 </div>
 
                 <div class="information_section">
                     <label for="zip" class="label_client_form">Code postale* </label>
-                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" aria-label="taper votre code postale" class="input_space_adaptation" required>
+                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" aria-label="taper votre code postale" class="input_space_adaptation" pattern="[0-9]{5}" required>
                     <label for="city" class="label_client_form">Ville* </label>
-                    <input type="text" name="city" id="city" placeholder="Fort-de-France" class="input_space_adaptation" aria-label="taper votre ville" required>
+                    <input type="text" name="city" id="city" placeholder="Fort-de-France" class="input_space_adaptation" aria-label="taper votre ville" pattern="[A-Za-z -]{4,40}" required>
                 </div>
 
                 <div class="information_section">
-                    <label for="telephone" class="label_client_form">Telephone </label>
-                    <input type="tel" name="telephone" id="telephone" placeholder="0101010101" minlength="10" maxlength="10" aria-label="taper votre numéro de téléphone" class="input_space_adaptation">
                     <label for="email" class="label_client_form">Adresse email* </label>
                     <input type="email" name="email" id="email" placeholder="monadressemail@maboite.com" class="input_space_adaptation" aria-label="taper votre adresse email" required>
                 </div>

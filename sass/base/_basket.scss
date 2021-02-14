@@ -24,7 +24,8 @@
     &_section {
         margin-top: nth($pixel_size, 2);
         margin-bottom: nth($pixel_size, 2);
-        @include direction_row @media screen and (max-width: 950px) {
+        @include direction_row;
+        @media screen and (max-width: 950px) {
             width: 100%;
             text-align: center;
             justify-content: center;
@@ -119,5 +120,11 @@
     @media screen and (max-width: 950px) {
         display: block;
         width: 100%;
+    }
+}
+
+input {
+    &:invalid {
+        color: map-get($colors, important_color);
     }
 }

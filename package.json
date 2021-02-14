@@ -1,22 +1,20 @@
 {
-    "name": "linondjouliana_5_31012021",
-    "version": "1.0.0",
-    "description": "ORINOCO site de commerce en ligne",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "sass": "sass --watch /Users/linonliyana/Documents/GitHub/LINONDjouliana_5_31012021/sass/main.scss /Users/linonliyana/Documents/GitHub/LINONDjouliana_5_31012021/css/style.css --compressed",
-        "build": "webpack",
-        "start": "webpack-dev-server"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/LiyanaSC/LINONDjouliana_5_31012021.git"
-    },
-    "author": "DL",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/LiyanaSC/LINONDjouliana_5_31012021/issues"
-    },
-    "homepage": "https://github.com/LiyanaSC/LINONDjouliana_5_31012021#readme"
+  "name": "orinoco-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.8",
+    "mongoose-unique-validator": "^2.0.2",
+    "uuid": "^3.3.2"
+  }
 }

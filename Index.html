@@ -66,7 +66,7 @@
                 <a href="teddy_1.html" class="main_products_results_generic">
                     <!--image du produit-->
                     <div class="results_pics">
-                        <img srcset="img/teddy_1small.jpg 300vw, img/teddy_1medium.jpg 700vw, img/teddy_1.jpg 1280vw" sizes="30vw" src="img/teddy_1medium.jpg" alt="photo d'un ours en peluche brun au pelage doux et fournis" class="results_pics_size">
+                        <img src="img/teddy_1.jpg" alt="photo d'un ours en peluche brun au pelage doux et fournis" class="results_pics_size">
                     </div>
 
                     <!--description du produit-->
@@ -158,5 +158,17 @@
     <!-- -------------------------------- FIN FOOTER -------------------------------- -->
 
 </body>
+<script>
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const mydata = JSON.parse(this.responseText);
+            console.log(mydata);
+        }
+    }
+    request.open("GET", "http://localhost:3000/api/teddies");
+    request.send(null)
+</script>
+
 
 </html>

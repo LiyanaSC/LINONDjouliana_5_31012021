@@ -62,7 +62,7 @@
 
 
             <!-- boite de résultat -->
-            <div class="main_products_results appear1">
+            <div class="main_products_results appear1" id="result_box">
                 <a href="teddy_1.html" class="main_products_results_generic">
                     <!--image du produit-->
                     <div class="results_pics">
@@ -73,9 +73,6 @@
                     <div class="results_descriptions">
                         <h3 class="results_descriptions_title">Teddy Bear</h3>
                         <p class="results_descriptions_text">Le doudou des rêveurs.</p>
-                        <p class="results_descriptions_text">Plusieurs colorie disponible.</p>
-                        <p class="results_descriptions_text">30 cm.</p>
-
                         <p class="results_descriptions_text_price">15€99</p>
                     </div>
                     <!-- étiquette de disponibilité -->
@@ -158,7 +155,7 @@
     <!-- -------------------------------- FIN FOOTER -------------------------------- -->
 
 </body>
-<script>
+<!--<script>
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -168,7 +165,8 @@
     }
     request.open("GET", "http://localhost:3000/api/teddies");
     request.send(null)
-</script>
+</script>-->
+<script src="javascript/show_result.js"></script>
 
 
 </html>

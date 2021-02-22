@@ -11,6 +11,11 @@
     opacity: 1;
   }
 }
+.appear0 {
+  animation: appearance 2000ms both;
+  animation-delay: 0ms;
+}
+
 .appear1 {
   animation: appearance 2000ms both;
   animation-delay: 300ms;

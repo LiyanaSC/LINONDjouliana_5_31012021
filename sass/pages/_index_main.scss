@@ -22,12 +22,18 @@
             justify-content: center;
             &_generic {
                 @include rounded_box;
-                @include no_padding;
+                padding-left: nth($pixel_size, 1);
+                padding-right: nth($pixel_size, 1);
                 display: flex;
                 background-color: map-get($colors, background_color2);
                 justify-content: flex-start;
                 position: relative;
                 margin-bottom: nth($pixel_size, 3);
+                @media screen and (max-width: 950px) {
+                    width: 100%;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
             }
         }
     }
@@ -41,12 +47,15 @@
 }
 
 .results_pics {
-    margin: 10px;
     @include no_padding;
     height: nth($pixel_size, 2)*10;
     width: 25%;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 950px) {
+        width: 100%;
+        justify-content: center;
+    }
     &_size {
         object-fit: cover;
         width: 100%;
@@ -62,17 +71,16 @@
         font-family: $font_family_title;
         @include no_padding;
         margin: nth($pixel_size, 1);
-        margin-left: 0;
         color: map-get($colors, third_color);
     }
     &_text {
         font-family: $font_family_texte;
+        margin: nth($pixel_size, 1);
         &_price {
             color: darken(map-get($colors, validation_color), 30%);
             font-weight: bold;
             font-size: nth($font_size, 2);
             margin: nth($pixel_size, 1);
-            margin-left: 0;
         }
     }
 }

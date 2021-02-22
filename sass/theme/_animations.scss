@@ -13,7 +13,7 @@
     }
 }
 
-@for $i from 1 to 5 {
+@for $i from 0 to 5 {
     .appear#{$i} {
         animation: appearance 2000ms both;
         animation-delay: 300ms*$i;

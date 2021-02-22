@@ -35,7 +35,6 @@ var getResults = function getResults() {
     })["catch"](catchError);
   });
 }; // appels de mes infos produits
-//tableau entier
 
 
 getResults().then(function (teddys) {

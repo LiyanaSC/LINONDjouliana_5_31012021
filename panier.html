@@ -57,49 +57,49 @@
                     <p><span>Total </span>(tva incluse)</p>
                     <p class="summary_detail_box_price">15.99€</p>
                 </div>
-                <div class="summary_detail_validation">
-                    <button class="summary_detail_validation_btn">
-                    <a href="validation.html">Valider mon panier</a>
-                </button>
-                </div>
+
             </div>
 
         </aside>
         <!-- formulaire clients -->
         <section class="information">
             <h1 class="information_title"> Information client</h1>
-            <form name="informationsClient" method="post">
-                <div class="information_section">
+            <form name="informationsClient" method="POST" id="basket_validation">
+                <div class="information_section appear0">
                     <input type="radio" id="madame" name="sexe" aria-label="choix du sexe féminim, madame">
                     <label for="madame">Madame</label>
                     <input type="radio" id="monsieur" name="sexe" aria-label="choix sexe masculin, monsieur">
                     <label for="monsieur">Monsieur</label>
                 </div>
 
-                <div class="information_section">
+                <div class="information_section appear1">
                     <label for="lastname" class="label_client_form">Nom* </label>
-                    <input type="text" name="lastname" id="lastname" placeholder="Linon" class="input_space_adaptation" aria-label="taper votre nom de famille" pattern="[A-Za-z -]{4,40}" required>
+                    <input type="text" name="lastName" id="lastName" placeholder="Linon" class="input_space_adaptation" aria-label="taper votre nom de famille" pattern="[A-Za-z -]{4,40}" required>
                     <label for="firstname" class="label_client_form">Prénom* </label>
-                    <input type="text" name="firstname" id="lastname" placeholder="Liyana" class="input_space_adaptation" aria-label="taper votre prénom" pattern="[A-Za-z -]{4,40}" required>
+                    <input type="text" name="firstName" id="firstName" placeholder="Liyana" class="input_space_adaptation" aria-label="taper votre prénom" pattern="[A-Za-z -]{4,40}" required>
                 </div>
 
-                <div class="information_section">
+                <div class="information_section appear2">
                     <label for="adress" class="label_client_form">Adresse* </label>
                     <input type="text" name="adress" id="adress" placeholder="Rue, avenue, quartier, boulevard,..." class="input_space_adaptation" aria-label="taper votre adresse" pattern="[A-Za-z0-9 -]{4,40}" required>
                 </div>
 
-                <div class="information_section">
+                <div class="information_section appear3">
                     <label for="zip" class="label_client_form">Code postale* </label>
-                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" aria-label="taper votre code postale" class="input_space_adaptation" pattern="[0-9]{5}" required>
+                    <input type="text" name="zip" id="zip" placeholder="97200" minlength="5" maxlength="5" aria-label="taper votre code postale" class="input_space_adaptation" pattern="[0-9]{5}">
                     <label for="city" class="label_client_form">Ville* </label>
                     <input type="text" name="city" id="city" placeholder="Fort-de-France" class="input_space_adaptation" aria-label="taper votre ville" pattern="[A-Za-z -]{4,40}" required>
                 </div>
 
-                <div class="information_section">
+                <div class="information_section appear4">
                     <label for="email" class="label_client_form">Adresse email* </label>
                     <input type="email" name="email" id="email" placeholder="monadressemail@maboite.com" class="input_space_adaptation" aria-label="taper votre adresse email" required>
                 </div>
+                <div class="summary_detail_validation">
+                    <input type="submit" class="summary_detail_validation_btn" value="Valider mon panier">
 
+
+                </div>
 
 
             </form>
@@ -175,6 +175,6 @@
     <!-- -------------------------------- FIN FOOTER -------------------------------- -->
 
 </body>
-<script src=""></script>
+<script src="javascript/validation_form.js"></script>
 
 </html>

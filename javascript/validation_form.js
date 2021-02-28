@@ -68,7 +68,6 @@ var addTotal = document.getElementById("add_total");
 addTotal.textContent = `${basket}` + "€";
 
 console.log(localStorage.key(0))
-    //click pour retrait produit
 
 
 

@@ -55,8 +55,7 @@ for (var i = 0; i < productArrays.length; i++) {
 
 var addTotal = document.getElementById("add_total");
 addTotal.textContent = "".concat(basket) + "€";
-console.log(localStorage.key(0)); //click pour retrait produit
-
+console.log(localStorage.key(0));
 /*(let i = 0; i < localStorage.length; i++) {
 
     let key = localStorage.key(i);

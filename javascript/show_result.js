@@ -126,12 +126,8 @@ getResults().then(function(teddys) {
 
         // page produit
 
-
-
-
-
         let productPage = document.getElementById("teddylink" + index);
-        console.log(productPage)
+
 
         productPage.addEventListener("click", function() {
             window.document.location = `product.html?id=${teddy._id}`
@@ -146,90 +142,42 @@ getResults().then(function(teddys) {
 
 
 
-        // envoi au localStorage
 
-        /*localStorage.setItem('given_id', teddy._id);
-        console.log("je fais quoi de ça " + localStorage.given_id);
+        /*  localStorage.setItem(`${teddy._id}`, teddy.price);
+          console.log("on va voir" + localStorage.teddy);
 
-        localStorage.setItem('teddies_Price', teddy.price);
-        console.log('ce sont les prix ' + localStorage.teddies_Price);*/
+          let addProductInbasket = document.getElementById(teddy._id + index)
 
-        /*                    localStorage.setItem(`${teddy._id}`, teddy.price);
-                            console.log("on va voir" + localStorage.teddy;
+          for (let i = 0; i < addProductInbasket.length; i++) {
+              addProductInbasket[i].addEventListener('click', (e) => {
+                  productAdded()
+              })
+          }
 
-                                let addProductInbasket = document.getElementById(teddy._id + index)
-
-                                for (let i = 0; i < addProductInbasket.length; i++) {
-                                    addProductInbasket[i].addEventListener('click', (e) => {
-                                        productAdded()
-                                    })
-                                }
-
-                                function productAdded() {
-                                    localStorage.getItem('teddies_Price', teddy.price)
-                                }
+          function productAdded() {
+              localStorage.getItem('teddies_Price', teddy.price)
+          }
 
 
 
-                                /*let basketPrice = document.getElementById("basket_price");
-                                let addTobasket = ;
+          /*let basketPrice = document.getElementById("basket_price");
+          let addTobasket = ;
 
-                                /*link.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    function openTeddyWindow(selectedOne){
+          /*link.addEventListener('click', function(e) {
+              e.preventDefault();
+              function openTeddyWindow(selectedOne){
 
-                                    }
+              }
 
-                                    }
+              }
 
-                                    /*if (basketPrice == null) {
-                                        basketPrice.textContent = "0.00€";
-                                    } else {
-                                        basketPrice.textContent = `prix`
-                                    }*/
+              /*if (basketPrice == null) {
+                  basketPrice.textContent = "0.00€";
+              } else {
+                  basketPrice.textContent = `prix`
+              }*/
 
         //clear(localStorage)
 
     });
 })
-
-
-
-
-//fonction Ajax pour ne pas répéter l'envoie de données
-/* let send = function(url) {
-    return new Promise(function() {
-        var sending = new XMLHttpRequest()
-
-        sending.open("POST", url, true);
-        sending.setRequestHeader("Content-Type", "application/json");
-        sending.send();
-
-
-    })
-}
-
-//promesses pour ne pas réitérer l'envoie de mes objets
-let sendProductInfo = function() {
-    return new Promise(function() {
-        send("http://localhost:3000/api/teddies/:_id").then(function(jsonBody) {
-            let teddysProduct = JSON.stringify(jsonBody)
-            resolve(teddysProduct)
-        })
-
-    })
-}
-
-
-
-//envoie de mes infos produits
-
-sendProductInfo().then(function(teddysProduct) {
-
-})
-getResults().then(function(teddyIds) {
-    teddyIds.forEach(function(teddyId, index) {
-        console.log(teddyId)
-    })
-
-})*/

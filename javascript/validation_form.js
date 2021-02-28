@@ -1,4 +1,80 @@
-var basketValidation = document.getElementById("basket_validation");
+/*function letsTryFetchtoGetTessiesApi() {
+    return fetch("http://localhost:3000/api/teddies").then(result => result.json())
+}
+
+letsTryFetchtoGetTessiesApi().then(Teddys => {
+    Teddys.forEach(teddy => {
+        console.log("essayons", teddy)
+
+    });
+})*/
+
+
+var productArrays = Object.keys(localStorage).map(function(cle) {
+    return [cle, localStorage[cle]];
+});
+console.log("par ici", productArrays);
+
+productArrays.forEach((productArray, index, array) => {
+
+    let stringifyProductInfo = productArray[1];
+
+    // le nom des produits dans le pannier
+    let productAdded = document.createElement('p');
+    productAdded.className = "summary_detail_box_articles";
+    productAdded.id = "summary_detail_box_articles" + index;
+    document.getElementById("put_products_in_basket").appendChild(productAdded);
+
+    let nameProduct = document.getElementById("summary_detail_box_articles" + index);
+    nameProduct.textContent = stringifyProductInfo.slice(6);
+    // le prix des produits dans le pannier
+    let showProctPriceInBasket = document.createElement('span');
+    showProctPriceInBasket.className = "summary_detail_box_price";
+    showProctPriceInBasket.id = "summary_detail_box_price" + index;
+    document.getElementById("summary_detail_box_articles" + index).appendChild(showProctPriceInBasket);
+
+    let priceProduct = document.getElementById("summary_detail_box_price" + index);
+    priceProduct.textContent = " " + stringifyProductInfo.slice(0, 5);
+    //nombre d'articles
+    let numberOfProduct = document.getElementById("number_of_product");
+    numberOfProduct.textContent = `${index+1}`;
+
+
+
+});
+
+var basket = 0;
+console.log(basket)
+
+for (let i = 0; i < productArrays.length; i++) {
+    basket += Number(productArrays[i][1].slice(0, 5))
+}
+console.log(basket)
+
+
+
+
+
+
+
+
+/*(let i = 0; i < localStorage.length; i++) {
+
+    let key = localStorage.key(i);
+    console.log(key, localStorage.getItem(key))
+
+    let productAdded = document.createElement('p');
+    productAdded.className = "summary_detail_box_articles";
+    document.getElementById("put_products_in_basket");
+
+
+
+
+
+}
+
+
+/*var basketValidation = document.getElementById("basket_validation");
 basketValidation.addEventListener('submit', function(event) {
     event.preventDefault();
     const contact = []
@@ -9,7 +85,7 @@ basketValidation.addEventListener('submit', function(event) {
     let email = document.getElementById("email").value;
     contact.push(firstName, lastName, adress, city, email)
 
-    /*localStorage.setItem("contact", contact)
+
 
     fetch("http://localhost:3000/api/teddies/order", {
             method: 'POST',
@@ -26,5 +102,5 @@ basketValidation.addEventListener('submit', function(event) {
         request.setRequestHeader("Content-Type", "application/json");
         request.send(JSON.stringify(contact));*/
 
-    location.href = "validation.html";
-})
+/*   location.href = "validation.html";
+})*/

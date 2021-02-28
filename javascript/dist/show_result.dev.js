@@ -132,4 +132,17 @@ getResults().then(function (teddys) {
           }*/
     //clear(localStorage)
   });
-});
+}); //panier
+
+var productArrays = Object.keys(localStorage).map(function (cle) {
+  return [cle, localStorage[cle]];
+}); //addition panier
+
+var basket = 0;
+
+for (var i = 0; i < productArrays.length; i++) {
+  basket += Number(productArrays[i][1].slice(0, 5));
+}
+
+var addTotal = document.getElementById("add_total");
+addTotal.textContent = "".concat(basket) + "€";

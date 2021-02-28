@@ -32,16 +32,31 @@ productArrays.forEach(function (productArray, index, array) {
   priceProduct.textContent = " " + stringifyProductInfo.slice(0, 5); //nombre d'articles
 
   var numberOfProduct = document.getElementById("number_of_product");
-  numberOfProduct.textContent = "".concat(index + 1);
-});
+  numberOfProduct.textContent = "".concat(index + 1); // Retirer un produit
+
+  var removeFromBasket = document.createElement('span');
+  removeFromBasket.className = "remove";
+  removeFromBasket.id = "remove" + index;
+  document.getElementById("summary_detail_box_articles" + index).appendChild(removeFromBasket);
+  var removeProduct = document.getElementById("remove" + index);
+  removeProduct.textContent = "retirer du panier";
+  document.getElementById("remove" + index).addEventListener('click', function (e) {
+    e.preventDefault();
+    localStorage.removeItem("".concat(productArray[0]));
+    document.location = "panier.html";
+  });
+}); //addition panier
+
 var basket = 0;
-console.log(basket);
 
 for (var i = 0; i < productArrays.length; i++) {
   basket += Number(productArrays[i][1].slice(0, 5));
 }
 
-console.log(basket);
+var addTotal = document.getElementById("add_total");
+addTotal.textContent = "".concat(basket) + "€";
+console.log(localStorage.key(0)); //click pour retrait produit
+
 /*(let i = 0; i < localStorage.length; i++) {
 
     let key = localStorage.key(i);

@@ -141,3 +141,17 @@ getProductById(urlId).then(teddy => {
 
     //localStorage.clear()
 })
+
+//panier
+var productArrays = Object.keys(localStorage).map(function(cle) {
+    return [cle, localStorage[cle]];
+});
+//addition panier
+var basket = 0;
+
+
+for (let i = 0; i < productArrays.length; i++) {
+    basket += Number(productArrays[i][1].slice(0, 5))
+}
+var addTotal = document.getElementById("add_total");
+addTotal.textContent = `${basket}` + "€";

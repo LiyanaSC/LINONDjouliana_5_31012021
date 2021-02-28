@@ -689,11 +689,19 @@ select {
 
 .summary_detail_box_articles {
   color: #da8e34;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .summary_detail_box_price {
   color: black;
   font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .summary_detail_validation {
@@ -755,6 +763,16 @@ select {
 
 input:invalid {
   color: #dc7670;
+}
+
+.remove {
+  font-size: 0.75rem;
+  color: #dc7670;
+  opacity: 0.5;
+}
+
+.remove:hover {
+  opacity: 1;
 }
 
 .valadion_page {

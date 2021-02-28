@@ -75,10 +75,14 @@
             padding: nth($pixel_size, 2);
             &_articles {
                 color: map-get($colors, third_color);
+                display: flex;
+                justify-content: flex-end;
             }
             &_price {
                 color: black;
                 font-weight: bold;
+                margin-left: nth($pixel_size, 1);
+                margin-right: nth($pixel_size, 1)
             }
         }
         &_validation {
@@ -126,5 +130,14 @@
 input {
     &:invalid {
         color: map-get($colors, important_color);
+    }
+}
+
+.remove {
+    font-size: nth($font_size, 3)/4;
+    color: map-get($colors, important_color);
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
     }
 }

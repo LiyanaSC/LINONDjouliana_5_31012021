@@ -91,11 +91,27 @@ getProductById(urlId).then(function (teddy) {
   document.getElementById("add_to_basket_box_btn").addEventListener('click', function (e) {
     e.preventDefault();
     var price = (teddy.price / 100).toPrecision(4);
+    var productInfoStorage = [];
+    var productprice = price;
     var name = teddy.name;
-    localStorage.setItem("".concat(teddy._id, " Price"), price);
-    localStorage.setItem("".concat(teddy._id, " Name"), name);
+    var id = teddy._id;
+    productInfoStorage.push(productprice, name);
+    localStorage.setItem("product ".concat(id), productInfoStorage);
     document.location = "panier.html";
   }); //localStorage.getItem("essai", "coucou je suis là");
 
-  console.log(localStorage); // localStorage.clear()
-});
+  console.log(localStorage); //localStorage.clear()
+}); //panier
+
+var productArrays = Object.keys(localStorage).map(function (cle) {
+  return [cle, localStorage[cle]];
+}); //addition panier
+
+var basket = 0;
+
+for (var i = 0; i < productArrays.length; i++) {
+  basket += Number(productArrays[i][1].slice(0, 5));
+}
+
+var addTotal = document.getElementById("add_total");
+addTotal.textContent = "".concat(basket) + "€";

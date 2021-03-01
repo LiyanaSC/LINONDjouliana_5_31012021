@@ -1,64 +1,58 @@
-/*function letsTryFetchtoGetTessiesApi() {
-    return fetch("http://localhost:3000/api/teddies").then(result => result.json())
+// apparitions des produit dans total
+function getProducts() {
+    return fetch(`http://localhost:3000/api/teddies/`).then(result => result.json())
+    resolve(teddys)
 }
+getProducts().then(teddys => {
+    teddys.forEach((teddy, index) => {
 
-letsTryFetchtoGetTessiesApi().then(Teddys => {
-    Teddys.forEach(teddy => {
-        console.log("essayons", teddy)
+        let name = teddy.name;
+        let getBackProductsInfo = JSON.parse(localStorage.getItem(`${name}`)); //contient : prix, nom,id
 
-    });
-})*/
+        // le nom des produits dans le pannier
+        let productAdded = document.createElement('p');
+        productAdded.className = "summary_detail_box_articles";
+        productAdded.id = "summary_detail_box_articles" + index;
+        document.getElementById("put_products_in_basket").appendChild(productAdded);
 
+        let nameProduct = document.getElementById("summary_detail_box_articles" + index);
+        nameProduct.textContent = getBackProductsInfo[1];
 
-var productArrays = Object.keys(localStorage).map(function(cle) {
-    return [cle, localStorage[cle]];
-});
-console.log("par ici", productArrays);
+        // le prix des produits dans le pannier
+        let showProctPriceInBasket = document.createElement('span');
+        showProctPriceInBasket.className = "summary_detail_box_price";
+        showProctPriceInBasket.id = "summary_detail_box_price" + index;
+        document.getElementById("summary_detail_box_articles" + index).appendChild(showProctPriceInBasket);
 
-productArrays.forEach((productArray, index, array) => {
+        let priceProduct = document.getElementById("summary_detail_box_price" + index);
+        priceProduct.textContent = getBackProductsInfo[0];
 
-    let stringifyProductInfo = productArray[1];
+        //nombre d'articles
+        let numberOfProduct = document.getElementById("number_of_product");
+        numberOfProduct.textContent = `${index+1}`;
 
+        // Retirer un produit
+        let removeFromBasket = document.createElement('span');
+        removeFromBasket.className = "remove";
+        removeFromBasket.id = "remove" + index;
+        document.getElementById("summary_detail_box_articles" + index).appendChild(removeFromBasket);
 
-    // le nom des produits dans le pannier
-    let productAdded = document.createElement('p');
-    productAdded.className = "summary_detail_box_articles";
-    productAdded.id = "summary_detail_box_articles" + index;
-    document.getElementById("put_products_in_basket").appendChild(productAdded);
+        let removeProduct = document.getElementById("remove" + index);
+        removeProduct.textContent = "retirer du panier";
 
-    let nameProduct = document.getElementById("summary_detail_box_articles" + index);
-    nameProduct.textContent = stringifyProductInfo.slice(6);
-    // le prix des produits dans le pannier
-    let showProctPriceInBasket = document.createElement('span');
-    showProctPriceInBasket.className = "summary_detail_box_price";
-    showProctPriceInBasket.id = "summary_detail_box_price" + index;
-    document.getElementById("summary_detail_box_articles" + index).appendChild(showProctPriceInBasket);
+        document.getElementById("remove" + index).addEventListener('click', function(e) {
+            e.preventDefault()
+            localStorage.removeItem(`${name}`);
+            document.location = "panier.html";
+        })
 
-    let priceProduct = document.getElementById("summary_detail_box_price" + index);
-    priceProduct.textContent = " " + stringifyProductInfo.slice(0, 5);
-    //nombre d'articles
-    let numberOfProduct = document.getElementById("number_of_product");
-    numberOfProduct.textContent = `${index+1}`;
-
-    // Retirer un produit
-    let removeFromBasket = document.createElement('span');
-    removeFromBasket.className = "remove";
-    removeFromBasket.id = "remove" + index;
-    document.getElementById("summary_detail_box_articles" + index).appendChild(removeFromBasket);
-
-    let removeProduct = document.getElementById("remove" + index);
-    removeProduct.textContent = "retirer du panier";
-
-    document.getElementById("remove" + index).addEventListener('click', function(e) {
-        e.preventDefault()
-        localStorage.removeItem(`${productArray[0]}`);
-        document.location = "panier.html";
     })
 
 
-});
+})
+
 //addition panier
-var basket = 0;
+/*var basket = 0;
 
 
 for (let i = 0; i < productArrays.length; i++) {
@@ -67,11 +61,7 @@ for (let i = 0; i < productArrays.length; i++) {
 var addTotal = document.getElementById("add_total");
 addTotal.textContent = `${basket}` + "€";
 
-console.log(localStorage.key(0))
-
-
-
-
+console.log(localStorage.key(0))*/
 
 
 

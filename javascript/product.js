@@ -115,14 +115,35 @@ getProductById(urlId).then(teddy => {
 
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
         e.preventDefault();
+
+        //let productInfoStorage = [];
+
         let price = (teddy.price / 100).toPrecision(4);
-        let productInfoStorage = [];
-        let productprice = price;
         let name = teddy.name;
         let id = teddy._id;
-        productInfoStorage.push(productprice, name);
-        localStorage.setItem(`product ${id}`, productInfoStorage);
+        let productToAddInStorage = [];
+        productToAddInStorage.push(price, name, id);
+
+        let addInArrayForm = JSON.stringify(productToAddInStorage);
+        localStorage.setItem(`${name}`, addInArrayForm);
+
+        let verif = JSON.parse(localStorage.getItem(`${name}`));
+
+        console.log(typeof verif)
+
+
+
+
+
+
+        // productInfoStorage.push(price, name, id);
+        /*localStorage.setItem(`${name}`, );
+        localStorage.setItem(`${name}`, name);
+        localStorage.setItem(`${name}`, id);*/
+
+
         document.location = "panier.html";
+
 
     })
 

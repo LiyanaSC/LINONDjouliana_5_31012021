@@ -1,5 +1,7 @@
 "use strict";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 var params = new URL(document.location).searchParams;
 var urlId = params.get('id');
 console.log(urlId);
@@ -89,14 +91,22 @@ getProductById(urlId).then(function (teddy) {
   validerLePanierText.textContent = "Ajouter au panier"; // Localstorage-----------------------------------------------------------------------------------------------------------------
 
   document.getElementById("add_to_basket_box_btn").addEventListener('click', function (e) {
-    e.preventDefault();
+    e.preventDefault(); //let productInfoStorage = [];
+
     var price = (teddy.price / 100).toPrecision(4);
-    var productInfoStorage = [];
-    var productprice = price;
     var name = teddy.name;
     var id = teddy._id;
-    productInfoStorage.push(productprice, name);
-    localStorage.setItem("product ".concat(id), productInfoStorage);
+    var productToAddInStorage = [];
+    productToAddInStorage.push(price, name, id);
+    var addInArrayForm = JSON.stringify(productToAddInStorage);
+    localStorage.setItem("".concat(name), addInArrayForm);
+    var verif = JSON.parse(localStorage.getItem("".concat(name)));
+    console.log(_typeof(verif)); // productInfoStorage.push(price, name, id);
+
+    /*localStorage.setItem(`${name}`, );
+    localStorage.setItem(`${name}`, name);
+    localStorage.setItem(`${name}`, id);*/
+
     document.location = "panier.html";
   }); //localStorage.getItem("essai", "coucou je suis là");
 

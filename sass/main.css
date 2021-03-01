@@ -659,7 +659,7 @@ select {
 }
 
 .summary_line {
-  margin: auto;
+  margin: 0;
   height: 1px;
   width: 90%;
   background-color: black;
@@ -685,6 +685,20 @@ select {
 .summary_detail_box {
   border-bottom: 1px gray dashed;
   padding: 20px;
+}
+
+.summary_detail_box_total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
 }
 
 .summary_detail_box_articles {

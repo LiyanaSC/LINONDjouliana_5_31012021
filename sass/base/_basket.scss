@@ -57,7 +57,7 @@
         }
     }
     &_line {
-        margin: auto;
+        margin: 0;
         height: nth($pixel_size, 1)/10;
         width: 90%;
         background-color: black;
@@ -73,6 +73,11 @@
         &_box {
             border-bottom: 1px gray dashed;
             padding: nth($pixel_size, 2);
+            &_total {
+                @include direction_row;
+                justify-content: space-between;
+                margin-top: nth($pixel_size, 2);
+            }
             &_articles {
                 color: map-get($colors, third_color);
                 display: flex;

@@ -1,3 +1,5 @@
+//appelle de mon id produit
+
 let params = (new URL(document.location)).searchParams;
 
 let urlId = params.get('id');
@@ -7,6 +9,7 @@ function getProductById(id) {
     return fetch(`http://localhost:3000/api/teddies/${id}`).then(result => result.json())
 }
 
+//mise en page-----------------------------------------------------------------------------------------------------------------
 getProductById(urlId).then(teddy => {
 
     //ajout de l'image
@@ -113,66 +116,45 @@ getProductById(urlId).then(teddy => {
 
 
 
-    document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
-        e.preventDefault();
+    // let inString = JSON.stringify(productToAddInStorage)
 
-        //let productInfoStorage = [];
+    if (localStorage.getItem("Produits du panier") == null) {
+        localStorage.setItem("Produits du panier", '[]');
+
+    }
+
+    let productToAddInStorage = JSON.parse(localStorage.getItem("Produits du panier"));
+    document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
+
 
         let price = (teddy.price / 100).toPrecision(4);
         let name = teddy.name;
         let id = teddy._id;
-        let productToAddInStorage = [];
-        productToAddInStorage.push(price, name, id);
 
-        let addInArrayForm = JSON.stringify(productToAddInStorage);
-        localStorage.setItem(`${name}`, addInArrayForm);
-
-        let verif = JSON.parse(localStorage.getItem(`${name}`));
-
-        console.log(typeof verif)
-
-
-
-
-
-
-        // productInfoStorage.push(price, name, id);
-        /*localStorage.setItem(`${name}`, );
-        localStorage.setItem(`${name}`, name);
-        localStorage.setItem(`${name}`, id);*/
-
+        e.preventDefault();
+        let produtObject = [name, price, id];
+        productToAddInStorage.push(produtObject);
+        localStorage.setItem("Produits du panier", JSON.stringify(productToAddInStorage));
+        console.log(productToAddInStorage)
 
         document.location = "panier.html";
 
 
     })
-
-
-
-
-
-
-
-
-
-    //localStorage.getItem("essai", "coucou je suis là");
-
-
-    console.log(localStorage)
-
-    //localStorage.clear()
 })
 
 //panier
-var productArrays = Object.keys(localStorage).map(function(cle) {
-    return [cle, localStorage[cle]];
-});
-//addition panier
-var basket = 0;
+let productsIntoBaskets = JSON.parse(localStorage.getItem("Produits du panier"))
+productsIntoBaskets.forEach((productsIntoBasket, index) => {
 
 
-for (let i = 0; i < productArrays.length; i++) {
-    basket += Number(productArrays[i][1].slice(0, 5))
-}
-var addTotal = document.getElementById("add_total");
-addTotal.textContent = `${basket}` + "€";
+    //addition panier
+    let basket = 0;
+
+
+    for (let i = 0; i < index + 1; i++) {
+        basket += Number(productsIntoBaskets[i][1])
+    }
+    var addTotal = document.getElementById("add_total");
+    addTotal.textContent = `${basket}` + "€";
+})

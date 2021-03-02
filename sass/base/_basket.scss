@@ -138,6 +138,7 @@ input {
     }
 }
 
+//javascript----------------------------------------------------------------
 .remove {
     font-size: nth($font_size, 3)/4;
     color: map-get($colors, important_color);
@@ -145,4 +146,12 @@ input {
     &:hover {
         opacity: 1;
     }
+}
+
+.block_for_result {
+    @include direction_column;
+    @include width_100;
+    justify-content: space-between;
+    background-color: chocolate;
+    border: 1px blueviolet solid;
 }

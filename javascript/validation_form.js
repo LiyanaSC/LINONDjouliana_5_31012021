@@ -83,43 +83,47 @@ var basketValidation = document.getElementById("basket_validation");
 basketValidation.addEventListener('submit', function(event) {
     event.preventDefault();
     let contact = []
-    let firstName = ["firstName", document.getElementById("firstName").value];
-    let lastName = ["lastName", document.getElementById("lastName").value];
-    let adress = ["adress", document.getElementById("adress").value];
-    let city = ["city", document.getElementById("city").value];
-    let email = ["email", document.getElementById("email").value];
+    let firstName = ["firstName:" + document.getElementById("firstName").value];
+    let lastName = ["lastName:" + document.getElementById("lastName").value];
+    let adress = ["adress:" + document.getElementById("adress").value];
+    let city = ["city:" + document.getElementById("city").value];
+    let email = ["email:" + document.getElementById("email").value];
     contact.push(firstName, lastName, adress, city, email)
 
     console.log(contact);
     //envoie  des id produits
-
     let IntoBaskets = JSON.parse(localStorage.getItem("Produits du panier"));
 
+    let products = []
 
-
-    products = []
     IntoBaskets.forEach((IntoBasket, index) => {
-
         products.push(JSON.stringify("product" + IntoBaskets[index][2]))
 
     });
     console.log(products)
 
 
-    fetch("http://localhost:3000/api/teddies/order", {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(contact)
+    //envoi àl'API
+    let clientPOST = [contact, products]
 
-        }).then(function(response) {
-            return response;
-        })
-        /*var request = new XMLHttpRequest();
-        request.open("POST", "http://localhost:3000/api/teddies/order");
-        request.setRequestHeader("Content-Type", "application/json");
-        request.send(JSON.stringify(contact));*/
+
+    fetch("http://localhost:3000/api/teddies/order", {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+
+        body: JSON.stringify(clientPOST)
+
+    }).then(function(response) {
+        return response;
+
+    })
+
+    /*var request = new XMLHttpRequest();
+    request.open("POST", "http://localhost:3000/api/teddies/order");
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(JSON.stringify(contact));*/
 
     //  location.href = "validation.html";
 })

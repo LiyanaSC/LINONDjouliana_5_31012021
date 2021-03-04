@@ -73,6 +73,12 @@
         &_box {
             border-bottom: 1px gray dashed;
             padding: nth($pixel_size, 2);
+            &_results {
+                @include direction_row;
+                @include no_margin;
+                @include no_padding;
+                justify-content: flex-end;
+            }
             &_total {
                 @include direction_row;
                 justify-content: space-between;
@@ -80,14 +86,15 @@
             }
             &_articles {
                 color: map-get($colors, third_color);
-                display: flex;
-                justify-content: flex-end;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
             &_price {
                 color: black;
                 font-weight: bold;
                 margin-left: nth($pixel_size, 1);
-                margin-right: nth($pixel_size, 1)
+                margin-right: nth($pixel_size, 1);
             }
         }
         &_validation {
@@ -146,12 +153,4 @@ input {
     &:hover {
         opacity: 1;
     }
-}
-
-.block_for_result {
-    @include direction_column;
-    @include width_100;
-    justify-content: space-between;
-    background-color: chocolate;
-    border: 1px blueviolet solid;
 }

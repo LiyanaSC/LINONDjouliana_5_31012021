@@ -142,19 +142,3 @@ getProductById(urlId).then(teddy => {
 
     })
 })
-
-//panier
-let productsIntoBaskets = JSON.parse(localStorage.getItem("Produits du panier"))
-productsIntoBaskets.forEach((productsIntoBasket, index) => {
-
-
-    //addition panier
-    let basket = 0;
-
-
-    for (let i = 0; i < index + 1; i++) {
-        basket += Number(productsIntoBaskets[i][1])
-    }
-    var addTotal = document.getElementById("add_total");
-    addTotal.textContent = `${basket}` + "€";
-})

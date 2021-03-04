@@ -1,4 +1,4 @@
-li {
+ul {
     list-style-type: none;
     @include direction_row;
     @include width_100;
@@ -6,7 +6,7 @@ li {
     align-items: center;
 }
 
-ul {
+li {
     display: block;
     padding: nth($pixel_size, 1);
     @include no_margin;

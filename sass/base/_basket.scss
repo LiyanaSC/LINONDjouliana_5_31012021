@@ -10,6 +10,7 @@
     @include no_padding;
     width: 70%;
     font-family: $font_family_texte;
+    order: 2;
     &_title {
         margin: nth($pixel_size, 1);
         font-family: $font_family_title;
@@ -45,7 +46,6 @@
     font-family: $font_family_texte;
     @media screen and (max-width: 950px) {
         width: 100%;
-        order: 2;
     }
     &_title {
         width: 90%;

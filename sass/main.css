@@ -9,7 +9,7 @@ body {
   padding: 0%;
 }
 
-li {
+ul {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,7 +27,7 @@ li {
           align-items: center;
 }
 
-ul {
+li {
   display: block;
   padding: 10px;
   margin: 0%;
@@ -564,6 +564,9 @@ select {
   padding: 0%;
   width: 70%;
   font-family: "Source Sans Pro", sans-serif;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 .information_title {
@@ -635,9 +638,6 @@ select {
 @media screen and (max-width: 950px) {
   .summary {
     width: 100%;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
   }
 }
 

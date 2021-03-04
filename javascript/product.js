@@ -89,7 +89,6 @@ getProductById(urlId).then(teddy => {
 
         let colorsAdded = document.getElementById("put_color" + index);
         colorsAdded.textContent = teddysColor;
-
     });
 
     //box de validation
@@ -118,23 +117,27 @@ getProductById(urlId).then(teddy => {
 
     // let inString = JSON.stringify(productToAddInStorage)
 
-    if (localStorage.getItem("Produits du panier") == null) {
-        localStorage.setItem("Produits du panier", '[]');
+    if (localStorage.getItem("Produits_du_panier") == null) {
+        localStorage.setItem("Produits_du_panier", '[]');
 
     }
 
-    let productToAddInStorage = JSON.parse(localStorage.getItem("Produits du panier"));
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
 
+        let productToAddInStorage = JSON.parse(localStorage.getItem("Produits_du_panier"));
 
         let price = (teddy.price / 100).toPrecision(4);
         let name = teddy.name;
         let id = teddy._id;
 
         e.preventDefault();
-        let produtObject = [name, price, id];
+        let produtObject = {
+            price: price,
+            name: name,
+            id: id
+        }
         productToAddInStorage.push(produtObject);
-        localStorage.setItem("Produits du panier", JSON.stringify(productToAddInStorage));
+        localStorage.setItem("Produits_du_panier", JSON.stringify(productToAddInStorage));
         console.log(productToAddInStorage)
 
         document.location = "panier.html";

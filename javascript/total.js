@@ -1,6 +1,16 @@
 //panier
-let totalFromBasket = JSON.parse(localStorage.getItem("Produits du panier"))
-totalFromBasket.forEach((productsIntoBasket, index) => {
+let products = JSON.parse(localStorage.getItem("Produits_du_panier"))
+
+let prices = products.map(x => Number(x.price))
+
+let total = prices.reduce((price, totalprice) => price + totalprice)
+console.log(total)
+console.log(prices)
+
+
+document.getElementById("add_total").textContent = `${total}` + "€";
+
+/*totalFromBasket.forEach((productsIntoBasket, index) => {
 
 
     //addition panier
@@ -12,4 +22,4 @@ totalFromBasket.forEach((productsIntoBasket, index) => {
     }
     var addTotal = document.getElementById("add_total");
     addTotal.textContent = `${basket}` + "€";
-})
+})*/

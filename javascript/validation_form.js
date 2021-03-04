@@ -1,12 +1,14 @@
 // apparitions des produit dans total
 
-let productsIntoBaskets = JSON.parse(localStorage.getItem("Produits du panier"));
 
-productsIntoBaskets.forEach((productsIntoBasket, index) => {
 
-    let name = productsIntoBasket[0];
-    let price = productsIntoBasket[1];
-    let id = productsIntoBasket[2]
+let productsIntoBaskets = JSON.parse(localStorage.getItem("Produits_du_panier"));
+
+productsIntoBaskets.forEach((productIntoBasket, index) => {
+
+    let name = productIntoBasket.name;
+    let price = productIntoBasket.price;
+    let id = productIntoBasket.id
 
     //La div contenant les infos produits
     let blockByResult = document.createElement('div');
@@ -67,7 +69,8 @@ productsIntoBaskets.forEach((productsIntoBasket, index) => {
 
 
 
-
+let toto = JSON.parse(localStorage.getItem("Produits du panier"));
+console.log(toto)
 
 
 var basketValidation = document.getElementById("basket_validation");
@@ -83,36 +86,37 @@ basketValidation.addEventListener('submit', function(event) {
 
     console.log(contact);
     //envoie  des id produits
-    let IntoBaskets = JSON.parse(localStorage.getItem("Produits du panier"));
+    let baketProducts = JSON.parse(localStorage.getItem("Produits_du_panier"));
 
-    let producttoadd = []
 
-    IntoBaskets.forEach((IntoBasket, index) => {
-        producttoadd.push(JSON.stringify("product " + IntoBaskets[index][2]))
 
-    });
-    let products = [JSON.stringify(producttoadd)]
-    console.log(products)
+
+
+    // console.log(products)
 
 
 
 
 
     fetch("http://localhost:3000/api/teddies/order", {
-        method: 'POST',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                contact: contact,
+                products: baketProducts.map(x => x.id)
+            })
 
-        body: contact,
-        products
 
-    }).then(function(response) {
-        return response;
+        }).then(response => response.json()).then(response => {
+            console.log(response)
+        })
+        /*  let request = new XMLHttpRequest();
+          request.open("POST", "http://localhost:3000/api/teddies/order");
+          request.setRequestHeader("Content-Type", "application/json");
 
-    })
-
-    /* var request = new XMLHttpRequest();
-     request.open("POST", "http://localhost:3000/api/teddies/order");
-     request.setRequestHeader("Content-Type", "application/json");
-     request.send(contact, products);*/
+          request.send();*/
 
     //  location.href = "validation.html";
 })

@@ -1,6 +1,8 @@
+// essaie changement style sur bouton de validation color: #566f34;
+addAttribut("try_to_change_me", "style", "background: #566f34; width: 50%")
+
+
 // apparitions des produit dans total
-
-
 
 let productsIntoBaskets = JSON.parse(localStorage.getItem("Produits_du_panier"));
 
@@ -11,49 +13,30 @@ productsIntoBaskets.forEach((productIntoBasket, index) => {
     let id = productIntoBasket.id
 
     //La div contenant les infos produits
-    let blockByResult = document.createElement('div');
-    blockByResult.className = "summary_detail_box_results";
-    blockByResult.id = "block_for_result" + index;
-    document.getElementById("put_products_in_basket").appendChild(blockByResult);
-
+    elementcreation('div', `block_for_result${index}`, "summary_detail_box_results", "put_products_in_basket");
 
     // le nom des produits dans le pannier
-    let productAdded = document.createElement('p');
-    productAdded.className = "summary_detail_box_articles";
-    productAdded.id = "summary_detail_box_articles" + index;
-    document.getElementById("block_for_result" + index).appendChild(productAdded);
-
-    let nameProduct = document.getElementById("summary_detail_box_articles" + index);
-    nameProduct.textContent = name;
-
+    elementcreation('p', `summary_detail_box_articles${index}`, "summary_detail_box_articles", `block_for_result${index}`);
+    addText(`summary_detail_box_articles${index}`, `${name}`);
 
     // le prix des produits dans le pannier
-    let showProctPriceInBasket = document.createElement('p');
-    showProctPriceInBasket.className = "summary_detail_box_price";
-    showProctPriceInBasket.id = "summary_detail_box_price" + index;
-    document.getElementById("block_for_result" + index).appendChild(showProctPriceInBasket);
+    elementcreation('p', `summary_detail_box_price${index}`, "summary_detail_box_price", `block_for_result${index}`);
+    addText(`summary_detail_box_price${index}`, `${price}€`);
 
-    let priceProduct = document.getElementById("summary_detail_box_price" + index);
-    priceProduct.textContent = price + "€";
 
     //nombre d'articles
-    let numberOfProduct = document.getElementById("number_of_product");
-    numberOfProduct.textContent = index + 1;
+    addText("number_of_product", `${index + 1}`);
 
     // Retirer un produit
-    let removeFromBasket = document.createElement('span');
-    removeFromBasket.className = "remove";
-    removeFromBasket.id = "remove" + index;
-    document.getElementById("block_for_result" + index).appendChild(removeFromBasket);
-
-    let removeProduct = document.getElementById("remove" + index);
-    removeProduct.textContent = "retirer";
+    elementcreation('span', `remove${index}`, "remove", `block_for_result${index}`);
+    addText(`remove${index}`, "retirer");
 
     document.getElementById("remove" + index).addEventListener('click', function(e) {
         e.preventDefault()
-        let productToAddInStorage = JSON.parse(localStorage.getItem("Produits du panier"))
+
+        let productToAddInStorage = JSON.parse(localStorage.getItem("Produits_du_panier"))
         productToAddInStorage.splice(index, 1);
-        localStorage.setItem("Produits du panier", JSON.stringify(productToAddInStorage));
+        localStorage.setItem("Produits_du_panier", JSON.stringify(productToAddInStorage));
         console.log(productToAddInStorage)
 
 
@@ -63,14 +46,21 @@ productsIntoBaskets.forEach((productIntoBasket, index) => {
 
 
 
-
-
 });
 
 
 
-let toto = JSON.parse(localStorage.getItem("Produits du panier"));
-console.log(toto)
+//bouton de retour
+elementcreation('button', "add_to_basket_box_btn", "summary_detail_validation_btn appear1", "total_box");
+document.getElementById("add_to_basket_box_btn").addEventListener('click', e => {
+    e.preventDefault();
+    document.location = "index.html";
+
+})
+
+//texte
+elementcreation('p', "add_to_basket_text", "useless", "add_to_basket_box_btn");
+addText("add_to_basket_text", "Continuer mon shopping");
 
 
 var basketValidation = document.getElementById("basket_validation");
@@ -87,6 +77,7 @@ basketValidation.addEventListener('submit', function(event) {
     console.log(contact);
     //envoie  des id produits
     let baketProducts = JSON.parse(localStorage.getItem("Produits_du_panier"));
+    localStorage.setItem("payed", total)
 
 
 
@@ -99,24 +90,22 @@ basketValidation.addEventListener('submit', function(event) {
 
 
     fetch("http://localhost:3000/api/teddies/order", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                contact: contact,
-                products: baketProducts.map(x => x.id)
-            })
-
-
-        }).then(response => response.json()).then(response => {
-            console.log(response)
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            contact: contact,
+            products: baketProducts.map(x => x.id)
         })
-        /*  let request = new XMLHttpRequest();
-          request.open("POST", "http://localhost:3000/api/teddies/order");
-          request.setRequestHeader("Content-Type", "application/json");
 
-          request.send();*/
 
-    //  location.href = "validation.html";
+    }).then(response => response.json()).then(response => {
+        console.log(response)
+        localStorage.setItem("Order", `${response.orderId}`)
+    })
+
+
+    location.href = "validation.html";
+
 })

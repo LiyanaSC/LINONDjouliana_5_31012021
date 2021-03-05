@@ -4,9 +4,13 @@
     @include width_100;
     &_products {
         @include width_100;
+        @include direction_column;
+        display: flex;
+        align-items: center;
         &_header {
             @include direction_row;
             justify-content: space-around;
+            width: 100%;
         }
         &_title {
             font-family: $font_family_texte;
@@ -15,25 +19,20 @@
             text-align: center;
         }
         &_results {
-            @include width_100;
             @include no_margin;
             @include no_padding;
+            @include rounded_box;
+            padding-left: nth($pixel_size, 1);
+            padding-right: nth($pixel_size, 1);
             display: flex;
-            justify-content: center;
-            &_generic {
-                @include rounded_box;
-                padding-left: nth($pixel_size, 1);
-                padding-right: nth($pixel_size, 1);
-                display: flex;
-                background-color: map-get($colors, background_color2);
-                justify-content: flex-start;
-                position: relative;
-                margin-bottom: nth($pixel_size, 3);
-                @media screen and (max-width: 950px) {
-                    width: 100%;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                }
+            background-color: map-get($colors, background_color2);
+            justify-content: flex-start;
+            position: relative;
+            margin-bottom: nth($pixel_size, 3);
+            @media screen and (max-width: 950px) {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
             }
         }
     }

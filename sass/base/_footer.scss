@@ -26,6 +26,8 @@
             color: map-get($colors, primary_color);
             &_direction {
                 @include direction_column;
+                justify-content: center;
+                text-align: center;
             }
         }
     }

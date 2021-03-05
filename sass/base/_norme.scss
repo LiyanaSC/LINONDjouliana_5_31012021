@@ -1,9 +1,10 @@
 ul {
     list-style-type: none;
+    @include no_padding;
     @include direction_row;
     @include width_100;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
 }
 
 li {
@@ -13,6 +14,7 @@ li {
 }
 
 a {
+    width: 100%;
     text-decoration: none;
     font-family: $font_family_texte;
     color: map-get($colors, normal_color);

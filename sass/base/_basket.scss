@@ -80,15 +80,26 @@
                 justify-content: flex-end;
             }
             &_total {
-                @include direction_row;
-                justify-content: space-between;
+                @include direction_column;
                 margin-top: nth($pixel_size, 2);
+                @media screen and (max-width: 950px) {
+                    width: 100%;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
             &_articles {
                 color: map-get($colors, third_color);
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
+                @media screen and (max-width: 950px) {
+                    width: 100%;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
             &_price {
                 color: black;

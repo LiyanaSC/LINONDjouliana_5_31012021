@@ -39,94 +39,46 @@ let getResults = function() {
 }
 
 
+//création  de mes produits--------------------------------------------------------------------------------------------------------
+getResults().then(teddys => {
+    teddys.forEach((teddy, index) => {
 
-// appels de mes infos produits
-getResults().then(function(teddyIds) {
-        console.log("ici", teddyIds)
-    })
-    //création  de mes produits--------------------------------------------------------------------------------------------------------
-getResults().then(function(teddys) {
-    teddys.forEach(function(teddy, index) {
+        /*    - elementcreation contient le type, l'id, la classe puis l'id du conteneur parent
+              - addAttribut contient l'id de l'élément concerné, l'attribut puis ce que contient cet attribut
+              - addText contient l'id de l'élément concerné et le texte à ajouter */
 
-        //creation du conteneur
-        let result = document.createElement('div');
-        result.className = "main_products_results" + " " + "appear" + index;
-        result.id = "result_box" + index;
-        document.getElementById("section_index").appendChild(result);
-
-        //creation de l'effet cliquable
-
-        let link = document.createElement('a');
-        link.className = "main_products_results_generic";
-        link.setAttribute('href', "#");
-        link.id = "teddylink" + index;
-        document.getElementById("result_box" + index).appendChild(link);
+        //conteneur
+        elementcreation('div', `result_box${index}`, "main_products_results", "section_index");
 
         //creation de la partie photo
-        let picBox = document.createElement('div');
-        picBox.className = "results_pics";
-        picBox.id = "result_pics" + index;
-        document.getElementById("teddylink" + index).appendChild(picBox);
+        elementcreation('div', `result_pics${index}`, "results_pics", `result_box${index}`); //bloc photo
 
-        let pic = document.createElement('img')
-        pic.className = "results_pics_size";
-        pic.id = "pic_" + index;
-        pic.setAttribute('src', teddy.imageUrl);
-        document.getElementById("result_pics" + index).appendChild(pic);
+        elementcreation('img', `pic_${index}`, "results_pics_size", `result_pics${index}`); //photo
+        addAttribut(`pic_${index}`, 'src', `${teddy.imageUrl}`) //lien photo
 
-        //creation de la partie commentaire
-        let commentBox = document.createElement('div');
-        commentBox.className = "results_descriptions";
-        commentBox.id = "results_descriptions" + index;
-        document.getElementById("teddylink" + index).appendChild(commentBox);
+        //création de la partie commentaire
+        elementcreation('div', `results_descriptions${index}`, "results_descriptions", `result_box${index}`);
 
         //Partie h3 (nom des articles)
-
-        let productTitle = document.createElement('h3');
-        productTitle.className = "results_descriptions_title";
-        productTitle.id = "results_descriptions_title" + index;
-        document.getElementById("results_descriptions" + index).appendChild(productTitle);
-
-        let nameProduct = document.getElementById("results_descriptions_title" + index);
-        nameProduct.textContent = teddy.name;
+        elementcreation('h3', `results_descriptions_title${index}`, "results_descriptions_title", `results_descriptions${index}`);
+        addText(`results_descriptions_title${index}`, `${teddy.name}`);
 
         //Partie description
-
-        let productText = document.createElement('p');
-        productText.className = "results_descriptions_text";
-        productText.id = "product_text" + index;
-        document.getElementById("results_descriptions" + index).appendChild(productText);
-
-        let textDescription = document.getElementById("product_text" + index);
-        textDescription.textContent = teddy.description;
+        elementcreation('p', `product_text${index}`, "results_descriptions_text", `results_descriptions${index}`);
+        addText(`product_text${index}`, `${teddy.description}`);
 
         //Prix
-
-
-        let productPrice = document.createElement('p');
-        productPrice.className = "results_descriptions_text_price";
-        productPrice.id = "product_price" + index;
-        document.getElementById("results_descriptions" + index).appendChild(productPrice);
-
-        let textPrice = document.getElementById("product_price" + index);
-        textPrice.textContent = (teddy.price / 100).toPrecision(4) + "€";
+        elementcreation('p', `product_price${index}`, "results_descriptions_text_price", `results_descriptions${index}`);
+        addText(`product_price${index}`, `${(teddy.price / 100).toPrecision(4)}€`);
 
         //creation de l'étiquette disponible
-        let availableLabel = document.createElement('div');
-        availableLabel.className = "results_availability";
-        availableLabel.id = "results_availability" + index;
-        document.getElementById("teddylink" + index).appendChild(availableLabel);
+        elementcreation('div', `results_availability${index}`, "results_availability", `result_box${index}`);
+        addText(`results_availability${index}`, "disponible");
 
-        let availableText = document.createElement('div');
-        availableText.id = "available" + index;
-        document.getElementById("results_availability" + index).appendChild(availableText);
 
-        let textAvailable = document.getElementById("available" + index);
-        textAvailable.textContent = "disponible";
+        // création des page produit
 
-        // page produit
-
-        let productPage = document.getElementById("teddylink" + index);
+        let productPage = document.getElementById("result_box" + index);
 
 
         productPage.addEventListener("click", function() {

@@ -1,9 +1,10 @@
 // REQUETTE AJAX ----------------------------------------------------------------------------------------------------
 
-//variables pour afficher qu'il s'agit d'une erreur ajax
-let catchError = function(e) {
+//variables pour afficher l'erreur
+/*let catchError = function(e) {
     console.error('ajax error', e)
 }
+
 
 //fonction Ajax pour ne pas répéter la requête
 let get = function(url) {
@@ -36,11 +37,19 @@ let getResults = function() {
 
 
     })
-}
+}*/
 
+//Méthode Fetch
 
-//création  de mes produits--------------------------------------------------------------------------------------------------------
-getResults().then(teddys => {
+fetch("http://localhost:3000/api/teddies").then(response => { return response }).then(response => response.json()).then(teddys => {
+
+    console.log(teddys)
+
+    //  })
+
+    //création  de mes produits--------------------------------------------------------------------------------------------------------
+
+    // getResults().then(teddys => {
     teddys.forEach((teddy, index) => {
 
         /*    - elementcreation contient le type, l'id, la classe puis l'id du conteneur parent

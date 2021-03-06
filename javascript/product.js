@@ -11,9 +11,6 @@ function getProductById(id) {
 
 //mise en page-----------------------------------------------------------------------------------------------------------------
 getProductById(urlId).then(teddy => {
-    /*    - elementcreation contient le type, l'id, la classe puis l'id du conteneur parent
-          - addAttribut contient l'id de l'élément concerné, l'attribut puis ce que contient cet attribut
-          - addText contient l'id de l'élément concerné et le texte à ajouter */
 
     //ajout de l'image
     elementcreation('img', "pic_loaded", "main_teddy_bear_result_pics_size", "box_pic"); //photo
@@ -89,16 +86,8 @@ getProductById(urlId).then(teddy => {
 
         let productToAddInStorage = JSON.parse(localStorage.getItem("Produits_du_panier"));
 
-        let price = (teddy.price / 100).toPrecision(4);
-        let name = teddy.name;
-        let id = teddy._id;
-
         e.preventDefault();
-        let produtObject = {
-            price: price,
-            name: name,
-            id: id
-        }
+        let produtObject = new ProductsInfosForAndFromLocalStorage(teddy.name, (teddy.price / 100).toPrecision(4), teddy._id);
         productToAddInStorage.push(produtObject);
         localStorage.setItem("Produits_du_panier", JSON.stringify(productToAddInStorage));
         console.log(productToAddInStorage)

@@ -63,31 +63,21 @@ elementcreation('p', "add_to_basket_text", "useless", "add_to_basket_box_btn");
 addText("add_to_basket_text", "Continuer mon shopping");
 
 
+
+//Envoi à L'api
 var basketValidation = document.getElementById("basket_validation");
 basketValidation.addEventListener('submit', function(event) {
     event.preventDefault();
     let contact = {
-        firstName: document.getElementById("firstName").value,
-        lastName: document.getElementById("lastName").value,
-        address: document.getElementById("adress").value,
-        city: document.getElementById("city").value,
-        email: document.getElementById("email").value
-    }
-
-    console.log(contact);
-    //envoie  des id produits
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            address: document.getElementById("adress").value,
+            city: document.getElementById("city").value,
+            email: document.getElementById("email").value
+        }
+        //envoie  des id produits
     let baketProducts = JSON.parse(localStorage.getItem("Produits_du_panier"));
-    localStorage.setItem("payed", total)
-
-
-
-
-
-    // console.log(products)
-
-
-
-
+    localStorage.setItem("payed", total) // conservation du prix total pour la validation
 
     fetch("http://localhost:3000/api/teddies/order", {
         method: 'POST',

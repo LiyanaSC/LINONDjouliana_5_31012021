@@ -3,7 +3,6 @@
 let params = (new URL(document.location)).searchParams;
 
 let urlId = params.get('id');
-console.log(urlId)
 
 function getProductById(id) {
     return fetch(`http://localhost:3000/api/teddies/${id}`).then(result => result.json())
@@ -75,22 +74,20 @@ getProductById(urlId).then(teddy => {
 
 
 
-    // let inString = JSON.stringify(productToAddInStorage)
-
+    //préparation de l'emplacement dans le local storage
     if (localStorage.getItem("Produits_du_panier") == null) {
         localStorage.setItem("Produits_du_panier", '[]');
-
     }
 
+    //au click l'envoie des produits ajouté au panier
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
+        e.preventDefault();
 
         let productToAddInStorage = JSON.parse(localStorage.getItem("Produits_du_panier"));
-
-        e.preventDefault();
         let produtObject = new ProductsInfosForAndFromLocalStorage(teddy.name, (teddy.price / 100).toPrecision(4), teddy._id);
         productToAddInStorage.push(produtObject);
         localStorage.setItem("Produits_du_panier", JSON.stringify(productToAddInStorage));
-        console.log(productToAddInStorage)
+
 
         document.location = "panier.html";
 

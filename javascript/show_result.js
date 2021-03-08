@@ -1,26 +1,12 @@
-//Méthode Fetch
-
+//Méthode Fetch________________________________________________________________________________________________________
 fetch("http://localhost:3000/api/teddies")
     .then(response => {
         if (response.ok == true) {
-            console.log("La requête API fonctionne!");
             response.json().then(teddys => {
-
-                console.log(teddys)
-
-                //  })
-
-                //création  de mes produits--------------------------------------------------------------------------------------------------------
-
-                // getResults().then(teddys => {
+                //création  de mes produits________________________________________________________________________________________________________
                 teddys.forEach((teddy, index) => {
-
-                    /*    - elementcreation contient le type, l'id, la classe puis l'id du conteneur parent
-                          - addAttribut contient l'id de l'élément concerné, l'attribut puis ce que contient cet attribut
-                          - addText contient l'id de l'élément concerné et le texte à ajouter */
-
                     //conteneur
-                    elementcreation('div', `result_box${index}`, "main_products_results", "section_index");
+                    elementcreation('div', `result_box${index}`, `main_products_results appear${index}`, "section_index");
 
                     //creation de la partie photo
                     elementcreation('div', `result_pics${index}`, "results_pics", `result_box${index}`); //bloc photo
@@ -65,9 +51,9 @@ fetch("http://localhost:3000/api/teddies")
 
                 });
             });
-
+            // Gestion de l'erreur________________________________________________________________________________________________________
         } else {
-            console.log('Oups! Il y a une erreur dans la requête fetch! vérifiez les paramètres');
+            console.log('Oups! Il y a une erreur dans la requête fetch! vérifiez les paramètres API');
             addText("section_index", "Oups! Le site rencontre un petit problème technique veillez nous en excuser!");
             addAttribut("section_index", "style", "font-family: 'Mansalva'; font-size: 2rem; margin: 30px;") //lien photo
 

@@ -58,35 +58,47 @@ addText("add_to_basket_text", "Continuer mon shopping");
 //Envoi à L'api__________________________________________________________________________________________________________________
 var basketValidation = document.getElementById("basket_validation");
 basketValidation.addEventListener('submit', function(event) {
-    event.preventDefault();
-    let contact = {
-            firstName: document.getElementById("firstName").value,
-            lastName: document.getElementById("lastName").value,
-            address: document.getElementById("adress").value,
-            city: document.getElementById("city").value,
-            email: document.getElementById("email").value
-        }
-        //envoie  des id produits
-    let baketProducts = JSON.parse(localStorage.getItem("Produits_du_panier"));
+    if (basket === "0.00€") {
+        event.preventDefault();
+        alert("Votre panier est vide... Mais vous trouverez votre bonheur dans notre boutique. Faites-y un tour!")
+    } else {
+        event.preventDefault();
+        let contact = {
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                address: document.getElementById("adress").value,
+                city: document.getElementById("city").value,
+                email: document.getElementById("email").value
+            }
+            //envoie  des id produits
+        let baketProducts = JSON.parse(localStorage.getItem("Produits_du_panier"));
 
 
-    fetch("http://localhost:3000/api/teddies/order", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                contact: contact,
-                products: baketProducts.map(x => x.id)
+        fetch("http://localhost:3000/api/teddies/order", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    contact: contact,
+                    products: baketProducts.map(x => x.id)
+                })
+
+
+            }).then(response => response.json()).then(response => {
+                localStorage.setItem("Order", `${response.orderId}`)
+
+
+                localStorage.setItem("payed", basket) // conservation du prix total pour la validation
+
+                window.document.location = `validation.html?id=${response.orderId}`
+                document.addEventListener('DOMContentLoaded', function() {
+                    productPage()
+                })
             })
+            //renvoi à la page commande validé
 
 
-        }).then(response => response.json()).then(response => {
-            console.log(response)
-            localStorage.setItem("Order", `${response.orderId}`)
-        })
-        //renvoi à la page commande validé
-    localStorage.setItem("payed", total) // conservation du prix total pour la validation
-    location.href = "validation.html";
 
+    }
 })

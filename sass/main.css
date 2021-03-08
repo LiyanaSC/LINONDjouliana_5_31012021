@@ -911,37 +911,37 @@ input:invalid {
 }
 
 .appear0 {
-  -webkit-animation: appearance 2000ms both;
-          animation: appearance 2000ms both;
+  -webkit-animation: appearance 1500ms both;
+          animation: appearance 1500ms both;
   -webkit-animation-delay: 0ms;
           animation-delay: 0ms;
 }
 
 .appear1 {
-  -webkit-animation: appearance 2000ms both;
-          animation: appearance 2000ms both;
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  -webkit-animation: appearance 1500ms both;
+          animation: appearance 1500ms both;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
 }
 
 .appear2 {
-  -webkit-animation: appearance 2000ms both;
-          animation: appearance 2000ms both;
+  -webkit-animation: appearance 1500ms both;
+          animation: appearance 1500ms both;
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.appear3 {
+  -webkit-animation: appearance 1500ms both;
+          animation: appearance 1500ms both;
   -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
 }
 
-.appear3 {
-  -webkit-animation: appearance 2000ms both;
-          animation: appearance 2000ms both;
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
-}
-
 .appear4 {
-  -webkit-animation: appearance 2000ms both;
-          animation: appearance 2000ms both;
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation: appearance 1500ms both;
+          animation: appearance 1500ms both;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 /*# sourceMappingURL=main.css.map */

@@ -90,7 +90,6 @@ getProductById(urlId).then(teddy => {
 
 
         document.location = "panier.html";
-
-
     })
+
 })

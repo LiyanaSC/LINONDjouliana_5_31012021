@@ -15,7 +15,7 @@
 
 @for $i from 0 to 5 {
     .appear#{$i} {
-        animation: appearance 2000ms both;
-        animation-delay: 300ms*$i;
+        animation: appearance 1500ms both;
+        animation-delay: 200ms*$i;
     }
 }

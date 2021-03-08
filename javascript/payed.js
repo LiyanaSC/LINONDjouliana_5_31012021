@@ -6,4 +6,4 @@ addText("order", `${commandNumber}`);
 
 localStorage.removeItem("Produits_du_panier")
 
-addText("add_total", `${localStorage.getItem("payed")}€`)
+addText("add_total", `${localStorage.getItem("payed")}`)

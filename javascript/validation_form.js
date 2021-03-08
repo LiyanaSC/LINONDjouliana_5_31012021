@@ -58,11 +58,11 @@ addText("add_to_basket_text", "Continuer mon shopping");
 //Envoi à L'api__________________________________________________________________________________________________________________
 var basketValidation = document.getElementById("basket_validation");
 basketValidation.addEventListener('submit', function(event) {
+    event.preventDefault();
     if (basket === "0.00€") {
-        event.preventDefault();
-        alert("Votre panier est vide... Mais vous trouverez votre bonheur dans notre boutique. Faites-y un tour!")
+        window.alert("Votre panier est vide... Mais vous trouverez votre bonheur dans notre boutique. Faites-y un tour!")
     } else {
-        event.preventDefault();
+
         let contact = {
                 firstName: document.getElementById("firstName").value,
                 lastName: document.getElementById("lastName").value,

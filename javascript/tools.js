@@ -25,3 +25,34 @@ export class ProductsInfosForAndFromLocalStorage {
     }
 
 }
+
+//panier et total
+export class Basket {
+    constructor() {
+        this.products = JSON.parse(localStorage.getItem("Produits_du_panier"));
+        this.total = 0;
+    }
+    preparStorage() { //préparation de l'emplacement dans le local storage
+        if (localStorage.getItem("Produits_du_panier") == null) {
+            localStorage.setItem("Produits_du_panier", '[]');
+        }
+    }
+    increment() {
+        if (this.products == "") {
+            document.getElementById("add_total").textContent = `${this.total}` + "€";
+        } else {
+            let prices = this.products.map(x => Number(x.price))
+
+            this.total = prices.reduce((price, totalprice) => price + totalprice)
+
+
+
+            document.getElementById("add_total").textContent = `${this.total}` + "€";
+        }
+    }
+    showTotal() {
+        return this.total
+
+    }
+
+}

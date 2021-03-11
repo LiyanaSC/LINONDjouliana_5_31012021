@@ -8,7 +8,10 @@ function getProductById(id) {
     return fetch(`http://localhost:3000/api/teddies/${id}`).then(result => result.json())
 }
 // mes imports 
-import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage } from './tools.js'
+import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage, Basket } from './tools.js'
+let basket = new Basket;
+basket.preparStorage();
+basket.increment();
 
 //mise en page-----------------------------------------------------------------------------------------------------------------
 getProductById(urlId).then(teddy => {

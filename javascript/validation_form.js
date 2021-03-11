@@ -4,7 +4,7 @@ addAttribut("try_to_change_me", "style", "background: #566f34; width: 50%")
 //import de les outils
 import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 
-let basket = new Basket(JSON.parse(localStorage.getItem("Produits_du_panier")), 0);
+let basket = new Basket();
 basket.preparStorage()
 basket.increment();
 let total = basket.showTotal();

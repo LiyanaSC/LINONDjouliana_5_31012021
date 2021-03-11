@@ -1,3 +1,8 @@
+//import de mes fonctions
+import { elementcreation, addAttribut, addText } from './tools.js'
+
+
+
 //Méthode Fetch________________________________________________________________________________________________________
 fetch("http://localhost:3000/api/teddies")
     .then(response => {
@@ -32,6 +37,7 @@ fetch("http://localhost:3000/api/teddies")
                     //creation de l'étiquette disponible
                     elementcreation('div', `results_availability${index}`, "results_availability", `result_box${index}`);
                     addText(`results_availability${index}`, "disponible");
+
 
 
                     // création des page produit

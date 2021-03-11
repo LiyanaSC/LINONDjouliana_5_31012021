@@ -1,6 +1,8 @@
 // essaie changement style sur bouton de validation color: #566f34;
 addAttribut("try_to_change_me", "style", "background: #566f34; width: 50%")
 
+//import de les outils
+import { elementcreation, addAttribut, addText } from './tools.js'
 
 // apparitions des produit dans total____________________________________________________________________________________________
 
@@ -59,7 +61,7 @@ addText("add_to_basket_text", "Continuer mon shopping");
 var basketValidation = document.getElementById("basket_validation");
 basketValidation.addEventListener('submit', function(event) {
     event.preventDefault();
-    if (basket === "0.00€") {
+    if (total === 0) {
         window.alert("Votre panier est vide... Mais vous trouverez votre bonheur dans notre boutique. Faites-y un tour!")
     } else {
 
@@ -89,7 +91,7 @@ basketValidation.addEventListener('submit', function(event) {
                 localStorage.setItem("Order", `${response.orderId}`)
 
 
-                localStorage.setItem("payed", basket) // conservation du prix total pour la validation
+                localStorage.setItem("payed", total) // conservation du prix total pour la validation
 
                 window.document.location = `validation.html?id=${response.orderId}`
                 document.addEventListener('DOMContentLoaded', function() {

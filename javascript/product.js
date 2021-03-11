@@ -7,6 +7,8 @@ let urlId = params.get('id');
 function getProductById(id) {
     return fetch(`http://localhost:3000/api/teddies/${id}`).then(result => result.json())
 }
+// mes imports 
+import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage } from './tools.js'
 
 //mise en page-----------------------------------------------------------------------------------------------------------------
 getProductById(urlId).then(teddy => {

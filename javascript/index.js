@@ -3,7 +3,7 @@ import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 //contenu du panier
 let basket = new Basket;
 basket.preparStorage();
-basket.increment();
+
 //Méthode Fetch________________________________________________________________________________________________________
 fetch("http://localhost:3000/api/teddies")
     .then(response => {
@@ -58,6 +58,8 @@ fetch("http://localhost:3000/api/teddies")
 
                 });
             });
+
+            basket.addAmount();
             // Gestion de l'erreur________________________________________________________________________________________________________
         } else {
             console.log('Oups! Il y a une erreur dans la requête fetch! vérifiez les paramètres API');

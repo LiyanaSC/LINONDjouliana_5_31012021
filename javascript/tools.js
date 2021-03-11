@@ -37,7 +37,13 @@ export class Basket {
             localStorage.setItem("Produits_du_panier", '[]');
         }
     }
-    increment() {
+    addProduct(productName, productPrice, productID) {
+        this.products
+        let produtObject = new ProductsInfosForAndFromLocalStorage(productName, productPrice, productID);
+        this.products.push(produtObject);
+        localStorage.setItem("Produits_du_panier", JSON.stringify(this.products));
+    }
+    addAmount() {
         if (this.products == "") {
             document.getElementById("add_total").textContent = `${this.total}` + "€";
         } else {
@@ -50,7 +56,8 @@ export class Basket {
             document.getElementById("add_total").textContent = `${this.total}` + "€";
         }
     }
-    showTotal() {
+
+    addTotal() {
         return this.total
 
     }

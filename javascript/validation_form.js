@@ -6,8 +6,8 @@ import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 
 let basket = new Basket();
 basket.preparStorage()
-basket.increment();
-let total = basket.showTotal();
+basket.addAmount();
+let total = basket.addTotal();
 console.log('par là', total)
 
 

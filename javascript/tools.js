@@ -25,6 +25,7 @@ export class ProductsInfosForAndFromLocalStorage {
     }
 
 }
+
 //panier et total
 export class Basket {
     constructor() {

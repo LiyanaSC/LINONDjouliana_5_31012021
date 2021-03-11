@@ -30,7 +30,7 @@ export class ProductsInfosForAndFromLocalStorage {
 export class Basket {
     constructor() {
         this.products = JSON.parse(localStorage.getItem("Produits_du_panier"));
-        this.total = 0;
+        this.total = (0).toPrecision(3);
     }
     preparStorage() { //préparation de l'emplacement dans le local storage
         if (localStorage.getItem("Produits_du_panier") == null) {

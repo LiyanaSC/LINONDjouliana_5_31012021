@@ -74,13 +74,6 @@ getProductById(urlId).then(teddy => {
 
     // Localstorage-----------------------------------------------------------------------------------------------------------------
 
-
-
-    //préparation de l'emplacement dans le local storage
-    if (localStorage.getItem("Produits_du_panier") == null) {
-        localStorage.setItem("Produits_du_panier", '[]');
-    }
-
     //au click l'envoie des produits ajouté au panier
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
         e.preventDefault();

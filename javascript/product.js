@@ -8,7 +8,10 @@ function getProductById(id) {
     return fetch(`http://localhost:3000/api/teddies/${id}`).then(result => result.json())
 }
 // mes imports 
-import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage } from './tools.js'
+import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage, Basket } from './tools.js'
+let basket = new Basket;
+basket.preparStorage();
+basket.increment();
 
 //mise en page-----------------------------------------------------------------------------------------------------------------
 getProductById(urlId).then(teddy => {
@@ -73,13 +76,6 @@ getProductById(urlId).then(teddy => {
 
 
     // Localstorage-----------------------------------------------------------------------------------------------------------------
-
-
-
-    //préparation de l'emplacement dans le local storage
-    if (localStorage.getItem("Produits_du_panier") == null) {
-        localStorage.setItem("Produits_du_panier", '[]');
-    }
 
     //au click l'envoie des produits ajouté au panier
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {

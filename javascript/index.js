@@ -1,8 +1,9 @@
 //import de mes fonctions
-import { elementcreation, addAttribut, addText } from './tools.js'
-
-
-
+import { elementcreation, addAttribut, addText, Basket } from './tools.js'
+//contenu du panier
+let basket = new Basket;
+basket.preparStorage();
+basket.increment();
 //Méthode Fetch________________________________________________________________________________________________________
 fetch("http://localhost:3000/api/teddies")
     .then(response => {

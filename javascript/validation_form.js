@@ -2,7 +2,14 @@
 addAttribut("try_to_change_me", "style", "background: #566f34; width: 50%")
 
 //import de les outils
-import { elementcreation, addAttribut, addText } from './tools.js'
+import { elementcreation, addAttribut, addText, Basket } from './tools.js'
+
+let basket = new Basket(JSON.parse(localStorage.getItem("Produits_du_panier")), 0);
+basket.preparStorage()
+basket.increment();
+let total = basket.showTotal();
+console.log('par là', total)
+
 
 // apparitions des produit dans total____________________________________________________________________________________________
 

@@ -30,14 +30,20 @@ export class ProductsInfosForAndFromLocalStorage {
 export class Basket {
     constructor() {
         this.products = JSON.parse(localStorage.getItem("Produits_du_panier"));
-        this.total = 0;
+        this.total = (0).toPrecision(3);
     }
     preparStorage() { //préparation de l'emplacement dans le local storage
         if (localStorage.getItem("Produits_du_panier") == null) {
             localStorage.setItem("Produits_du_panier", '[]');
         }
     }
-    increment() {
+    addProduct(productName, productPrice, productID) {
+        this.products
+        let produtObject = new ProductsInfosForAndFromLocalStorage(productName, productPrice, productID);
+        this.products.push(produtObject);
+        localStorage.setItem("Produits_du_panier", JSON.stringify(this.products));
+    }
+    addAmount() {
         if (this.products == "") {
             document.getElementById("add_total").textContent = `${this.total}` + "€";
         } else {
@@ -50,7 +56,8 @@ export class Basket {
             document.getElementById("add_total").textContent = `${this.total}` + "€";
         }
     }
-    showTotal() {
+
+    addTotal() {
         return this.total
 
     }

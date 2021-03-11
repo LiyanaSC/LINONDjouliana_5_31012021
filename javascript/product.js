@@ -11,7 +11,7 @@ function getProductById(id) {
 import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage, Basket } from './tools.js'
 let basket = new Basket;
 basket.preparStorage();
-basket.increment();
+
 
 //mise en page-----------------------------------------------------------------------------------------------------------------
 getProductById(urlId).then(teddy => {
@@ -81,13 +81,9 @@ getProductById(urlId).then(teddy => {
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
         e.preventDefault();
 
-        let productToAddInStorage = JSON.parse(localStorage.getItem("Produits_du_panier"));
-        let produtObject = new ProductsInfosForAndFromLocalStorage(teddy.name, (teddy.price / 100).toPrecision(4), teddy._id);
-        productToAddInStorage.push(produtObject);
-        localStorage.setItem("Produits_du_panier", JSON.stringify(productToAddInStorage));
-
+        basket.addProduct(teddy.name, (teddy.price / 100).toPrecision(4), teddy._id);
 
         document.location = "panier.html";
     })
-
+    basket.addAmount();
 })

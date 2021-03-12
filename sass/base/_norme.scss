@@ -18,7 +18,6 @@ a {
     text-decoration: none;
     font-family: $font_family_texte;
     color: map-get($colors, normal_color);
-    font-weight: nth($font_size, 2);
 }
 
 p {

@@ -17,7 +17,7 @@ export function addText(id, textToAdd) {
 }
 
 //classe des infos produits utiles
-export class ProductsInfosForAndFromLocalStorage {
+export class ProductsInfosForLocalStorage {
     constructor(name, price, id) {
         this.name = name;
         this.price = price;
@@ -38,8 +38,8 @@ export class Basket {
         }
     }
     addProduct(productName, productPrice, productID) {
-        this.products
-        let produtObject = new ProductsInfosForAndFromLocalStorage(productName, productPrice, productID);
+
+        let produtObject = new ProductsInfosForLocalStorage(productName, productPrice, productID);
         this.products.push(produtObject);
         localStorage.setItem("Produits_du_panier", JSON.stringify(this.products));
     }
@@ -55,6 +55,11 @@ export class Basket {
 
             document.getElementById("add_total").textContent = `${this.total}` + "€";
         }
+    }
+
+    deleteProduct(index) {
+        this.products.splice(index, 1);
+        localStorage.setItem("Produits_du_panier", JSON.stringify(this.products));
     }
 
     addTotal() {

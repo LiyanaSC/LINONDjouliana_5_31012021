@@ -39,13 +39,8 @@ JSON.parse(localStorage.getItem("Produits_du_panier")).forEach((productIntoBaske
     addText(`remove${index}`, "retirer");
 
     document.getElementById("remove" + index).addEventListener('click', function(e) {
-        e.preventDefault()
-
-        let productToAddInStorage = JSON.parse(localStorage.getItem("Produits_du_panier"))
-        productToAddInStorage.splice(index, 1);
-        localStorage.setItem("Produits_du_panier", JSON.stringify(productToAddInStorage));
-        console.log(productToAddInStorage)
-
+        e.preventDefault();
+        basket.deleteProduct(index);
         document.location = "panier.html"; //recharger la page
     })
 });

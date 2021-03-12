@@ -8,7 +8,7 @@ function getProductById(id) {
     return fetch(`http://localhost:3000/api/teddies/${id}`).then(result => result.json())
 }
 // mes imports 
-import { elementcreation, addAttribut, addText, ProductsInfosForAndFromLocalStorage, Basket } from './tools.js'
+import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 let basket = new Basket;
 basket.preparStorage();
 
@@ -80,9 +80,7 @@ getProductById(urlId).then(teddy => {
     //au click l'envoie des produits ajouté au panier
     document.getElementById("add_to_basket_box_btn").addEventListener('click', (e) => {
         e.preventDefault();
-
         basket.addProduct(teddy.name, (teddy.price / 100).toPrecision(4), teddy._id);
-
         document.location = "panier.html";
     })
     basket.addAmount();

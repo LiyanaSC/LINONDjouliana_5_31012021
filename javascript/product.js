@@ -10,7 +10,7 @@ function getProductById(id) {
 // mes imports 
 import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 let basket = new Basket;
-basket.preparStorage();
+
 
 
 //mise en page-----------------------------------------------------------------------------------------------------------------

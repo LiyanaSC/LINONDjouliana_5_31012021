@@ -5,10 +5,9 @@ addAttribut("try_to_change_me", "style", "background: #566f34; width: 50%")
 import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 
 let basket = new Basket();
-basket.preparStorage()
 basket.addAmount();
 let total = basket.addTotal();
-console.log('par là', total)
+
 
 
 // apparitions des produit dans total____________________________________________________________________________________________

@@ -53,7 +53,7 @@ export class Basket {
 
 
 
-            document.getElementById("add_total").textContent = `${this.total}` + "€";
+            document.getElementById("add_total").textContent = `${(this.total).toFixed(2)}` + "€";
         }
     }
 

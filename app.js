@@ -28,7 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => res.render('pages/index'))
+app.get('/', (req, res) => res.render('index.html'))
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

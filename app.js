@@ -28,8 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 
-express().use(express.static(path.join(__dirname, 'LINONDjouliana_5_31012021')))
-    .get('/', (req, res) => res.render('pages/index'))
+app.get('/', (req, res) => res.render('pages/index'))
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

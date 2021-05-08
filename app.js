@@ -28,9 +28,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '/index.html')), res.get(path.join(__dirname, '/panier.html'))
-)
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
+    .use(path.join(__dirname, '/panier.html'))
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

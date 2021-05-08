@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(path.join(__dirname, 'sass')))
-    .use(express.static(path.join(__dirname, 'panier.html')))
+    .set(express.static(path.join(__dirname, 'panier.html')))
     .get('/', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
 
 

@@ -28,11 +28,11 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static(path.join(__dirname, 'sass')))
-    .use(express.static(path.join(__dirname, '/panier.html')))
-    .use(express.static(path.join(__dirname, 'sass')))
+app.use(express.static(path.join(__dirname, '/sass')))
     .get('/', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
     .get('/panier.html', (req, res) => res.sendFile(path.join(__dirname, '/panier.html')))
+    .get('/validation.html', (req, res) => res.sendFile(path.join(__dirname, '/validation.html')))
+
 
 
 app.use('/images', express.static(path.join(__dirname, 'images')));

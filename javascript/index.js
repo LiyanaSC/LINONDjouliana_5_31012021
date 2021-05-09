@@ -3,6 +3,7 @@ import { elementcreation, addAttribut, addText, Basket } from './tools.js'
 //contenu du panier
 let basket = new Basket;
 basket.preparStorage();
+console.log("start !")
 
 //Méthode Fetch________________________________________________________________________________________________________
 fetch("http://localhost:3000/api/teddies")

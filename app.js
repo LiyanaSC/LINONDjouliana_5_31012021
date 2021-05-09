@@ -31,6 +31,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname + '/sass')))
     .use(express.static(path.join(__dirname + '/img')))
     .use(express.static(path.join(__dirname + '/images')))
+    .use('/javascript', express.static(path.join(__dirname + '/javascript')))
     .use('/images', express.static(path.join(__dirname, 'images')))
     .get('/', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
     .get('/index.html', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))

@@ -30,7 +30,9 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname + '/sass')))
     .use(express.static(path.join(__dirname + '/img')))
-    .get('/', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
+    .use(express.static(path.join(__dirname + '/images')))
+
+.get('/', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
     .get('/panier.html', (req, res) => res.sendFile(path.join(__dirname, '/panier.html')))
     .get('/validation.html', (req, res) => res.sendFile(path.join(__dirname, '/validation.html')))
 

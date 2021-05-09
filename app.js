@@ -37,6 +37,7 @@ app.use(express.static(path.join(__dirname + '/sass')))
     .get('/index.html', (req, res) => res.sendFile(path.join(__dirname, '/index.html')))
     .get('/panier.html', (req, res) => res.sendFile(path.join(__dirname, '/panier.html')))
     .get('/validation.html', (req, res) => res.sendFile(path.join(__dirname, '/validation.html')))
+    .get('/product.html', (req, res) => res.sendFile(path.join(__dirname, '/product.html')))
 
 
 
